@@ -1,16 +1,57 @@
-# This is a sample Python script.
+import csv
+import random
+import json
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Wczytywanie imion z jednego pliku
+imiona_meskie = []
+imiona_zenskie = []
 
+with open("imiona.csv", encoding="utf-8") as f:
+    reader = csv.DictReader(f, delimiter=',')
+    reader.fieldnames = [n.strip() for n in reader.fieldnames]
+    for row in reader:
+        if row["PŁEĆ"] == "MĘŻCZYZNA":
+            imiona_meskie.append(row["IMIĘ_PIERWSZE"].capitalize())
+        elif row["PŁEĆ"] == "KOBIETA":
+            imiona_zenskie.append(row["IMIĘ_PIERWSZE"].capitalize())
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Wczytywanie nazwisk męskich
+nazwiska_meskie = []
+with open("nazwiska_m.csv", encoding="utf-8") as f:
+    reader = csv.DictReader(f, delimiter=',')
+    for row in reader:
+        nazwiska_meskie.append(row["Nawisko"].capitalize())
 
+# Wczytywanie nazwisk żeńskich
+nazwiska_zenskie = []
+with open("nazwiska_d.csv", encoding="utf-8") as f:
+    reader = csv.DictReader(f, delimiter=',')
+    for row in reader:
+        nazwiska_zenskie.append(row["Nawisko"].capitalize())
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# Funkcja generująca jedną osobę
+def generuj_osobe():
+    plec = random.choice(["M", "K"])
+    if plec == "M":
+        return {
+            "imie": random.choice(imiona_meskie),
+            "nazwisko": random.choice(nazwiska_meskie),
+            "plec": "M"
+        }
+    else:
+        return {
+            "imie": random.choice(imiona_zenskie),
+            "nazwisko": random.choice(nazwiska_zenskie),
+            "plec": "K"
+        }
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Pytanie użytkownika
+ile = int(input("Ile osób chcesz wygenerować? "))
+
+# Generowanie i zapis
+osoby = [generuj_osobe() for _ in range(ile)]
+
+with open("osoby.json", "w", encoding="utf-8") as f:
+    json.dump(osoby, f, indent=4, ensure_ascii=False)
+
+print(f"Wygenerowano {ile} osób i zapisano do pliku 'osoby.json'.")

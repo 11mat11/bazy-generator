@@ -1,0 +1,52 @@
+[
+    {
+        "imie": "Anastazja",
+        "nazwisko": "Porcek",
+        "plec": "K"
+    },
+    {
+        "imie": "Dominik",
+        "nazwisko": "Kucuk",
+        "plec": "M"
+    },
+    {
+        "imie": "Anna",
+        "nazwisko": "Stępień-dudek",
+        "plec": "K"
+    },
+    {
+        "imie": "Nadia",
+        "nazwisko": "Kobzo",
+        "plec": "K"
+    },
+    {
+        "imie": "Elena",
+        "nazwisko": "Blazheievska",
+        "plec": "K"
+    },
+    {
+        "imie": "Ksawery",
+        "nazwisko": "Oborozhnii",
+        "plec": "M"
+    },
+    {
+        "imie": "Krzysztof",
+        "nazwisko": "Medillo",
+        "plec": "M"
+    },
+    {
+        "imie": "Liliana",
+        "nazwisko": "Iglik",
+        "plec": "K"
+    },
+    {
+        "imie": "Nel",
+        "nazwisko": "Daubar",
+        "plec": "K"
+    },
+    {
+        "imie": "Wojciech",
+        "nazwisko": "Czereb",
+        "plec": "M"
+    }
+]
