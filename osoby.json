@@ -1,227 +1,102 @@
 [
     {
         "plec": "M",
-        "imie": "Amadeusz",
-        "nazwisko": "Liolias"
+        "imie": "Henryk",
+        "nazwisko": "Majewski"
     },
     {
         "plec": "M",
-        "imie": "Milo",
-        "nazwisko": "Kamarenka"
+        "imie": "Kacper",
+        "nazwisko": "Przywara"
     },
     {
         "plec": "K",
-        "imie": "Veronika",
-        "nazwisko": "Pruk"
-    },
-    {
-        "plec": "K",
-        "imie": "Sonia",
-        "nazwisko": "Lutsko"
+        "imie": "Rita",
+        "nazwisko": "Szymańska"
     },
     {
         "plec": "M",
-        "imie": "Michail",
-        "nazwisko": "Zeziulin"
+        "imie": "Jan",
+        "nazwisko": "Korfel"
     },
     {
         "plec": "M",
-        "imie": "Louie",
-        "nazwisko": "Sholtes"
-    },
-    {
-        "plec": "K",
-        "imie": "Roksana",
-        "nazwisko": "Wobik"
-    },
-    {
-        "plec": "K",
-        "imie": "Alicia",
-        "nazwisko": "Sanjaa"
-    },
-    {
-        "plec": "K",
-        "imie": "Khrystyna",
-        "nazwisko": "Popławska-gugała"
+        "imie": "Bruno",
+        "nazwisko": "Nowicki"
     },
     {
         "plec": "M",
-        "imie": "Zachar",
-        "nazwisko": "Gliń"
+        "imie": "Jan",
+        "nazwisko": "Bartnicki"
     },
     {
         "plec": "K",
-        "imie": "Miłana",
-        "nazwisko": "Kendziorczyk"
+        "imie": "Maja",
+        "nazwisko": "Mundziel"
+    },
+    {
+        "plec": "K",
+        "imie": "Agata",
+        "nazwisko": "Kielińska"
+    },
+    {
+        "plec": "K",
+        "imie": "Michalina",
+        "nazwisko": "Raszczuk"
     },
     {
         "plec": "M",
-        "imie": "Jerzy",
-        "nazwisko": "Krajnyczyn"
+        "imie": "Ignacy",
+        "nazwisko": "Kryś"
     },
     {
         "plec": "K",
-        "imie": "Lisa",
-        "nazwisko": "Karnowski"
+        "imie": "Antonina",
+        "nazwisko": "Kalisz"
     },
     {
         "plec": "K",
-        "imie": "Azalia",
-        "nazwisko": "Petrachyk"
-    },
-    {
-        "plec": "K",
-        "imie": "Elmira",
-        "nazwisko": "Holoporova"
-    },
-    {
-        "plec": "K",
-        "imie": "Amelia",
-        "nazwisko": "Mecnarowska"
-    },
-    {
-        "plec": "K",
-        "imie": "Arianna",
-        "nazwisko": "Piotrewicz"
+        "imie": "Hanna",
+        "nazwisko": "Ludziejewska"
     },
     {
         "plec": "M",
-        "imie": "Xawery",
-        "nazwisko": "Sienkowiec"
+        "imie": "Jan",
+        "nazwisko": "Strojny"
     },
     {
         "plec": "M",
-        "imie": "Serafin",
-        "nazwisko": "Gefner"
+        "imie": "Stanisław",
+        "nazwisko": "Jędrzejewski"
+    },
+    {
+        "plec": "M",
+        "imie": "Szymon",
+        "nazwisko": "Kulesza"
+    },
+    {
+        "plec": "M",
+        "imie": "Kajetan",
+        "nazwisko": "Poprawski"
     },
     {
         "plec": "K",
-        "imie": "Luiza",
-        "nazwisko": "Laufer weltman"
+        "imie": "Klara",
+        "nazwisko": "Kazimierczak"
     },
     {
         "plec": "M",
-        "imie": "Janusz",
-        "nazwisko": "Funk"
-    },
-    {
-        "plec": "M",
-        "imie": "Leonardo",
-        "nazwisko": "Kuzviesov"
-    },
-    {
-        "plec": "M",
-        "imie": "Franciszek",
-        "nazwisko": "Pochepnia"
-    },
-    {
-        "plec": "M",
-        "imie": "Nicolas",
-        "nazwisko": "Botnari"
+        "imie": "Mikołaj",
+        "nazwisko": "Pach"
     },
     {
         "plec": "K",
-        "imie": "Adrianna",
-        "nazwisko": "Meheria"
-    },
-    {
-        "plec": "K",
-        "imie": "Nella",
-        "nazwisko": "Kravchun"
+        "imie": "Marianna",
+        "nazwisko": "Słonina"
     },
     {
         "plec": "M",
-        "imie": "Kasper",
-        "nazwisko": "Sadchanka"
-    },
-    {
-        "plec": "K",
-        "imie": "Ariadna",
-        "nazwisko": "Pilson"
-    },
-    {
-        "plec": "M",
-        "imie": "Mateo",
-        "nazwisko": "Tecłaf"
-    },
-    {
-        "plec": "K",
-        "imie": "Olga",
-        "nazwisko": "Mocherad"
-    },
-    {
-        "plec": "M",
-        "imie": "Mihail",
-        "nazwisko": "Dęby"
-    },
-    {
-        "plec": "K",
-        "imie": "Nel",
-        "nazwisko": "Rybaczonek"
-    },
-    {
-        "plec": "K",
-        "imie": "Tara",
-        "nazwisko": "Janderko"
-    },
-    {
-        "plec": "K",
-        "imie": "Zofia",
-        "nazwisko": "Petschke"
-    },
-    {
-        "plec": "K",
-        "imie": "Marika",
-        "nazwisko": "Przesdzienk"
-    },
-    {
-        "plec": "M",
-        "imie": "Denys",
-        "nazwisko": "Samerdyk"
-    },
-    {
-        "plec": "M",
-        "imie": "Leszek",
-        "nazwisko": "Feuereisen"
-    },
-    {
-        "plec": "M",
-        "imie": "Brajan",
-        "nazwisko": "Zdarta"
-    },
-    {
-        "plec": "M",
-        "imie": "Błażej",
-        "nazwisko": "Apt"
-    },
-    {
-        "plec": "K",
-        "imie": "Liliana",
-        "nazwisko": "Kovalyshyn"
-    },
-    {
-        "plec": "M",
-        "imie": "Gleb",
-        "nazwisko": "Tochowicz"
-    },
-    {
-        "plec": "M",
-        "imie": "Maxymilian",
-        "nazwisko": "Samudi"
-    },
-    {
-        "plec": "K",
-        "imie": "Yuliia",
-        "nazwisko": "Gryceniuk"
-    },
-    {
-        "plec": "M",
-        "imie": "Paweł",
-        "nazwisko": "Kalayev"
-    },
-    {
-        "plec": "K",
-        "imie": "Daryna",
-        "nazwisko": "Kandratava"
+        "imie": "Antoni",
+        "nazwisko": "Wawrzyniak"
     }
 ]

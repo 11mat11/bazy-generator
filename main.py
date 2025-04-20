@@ -18,10 +18,12 @@ def wczytaj_imiona():
             reader = csv.DictReader(f, delimiter=',')
             reader.fieldnames = [n.strip() for n in reader.fieldnames]
             for row in reader:
+                imie = row["IMIĘ_PIERWSZE"].capitalize()
+                liczba = int(row["LICZBA_WYSTĄPIEŃ"])
                 if row["PŁEĆ"] == "MĘŻCZYZNA":
-                    imiona_meskie.append(row["IMIĘ_PIERWSZE"].capitalize())
+                    imiona_meskie.append((imie, liczba))
                 elif row["PŁEĆ"] == "KOBIETA":
-                    imiona_zenskie.append(row["IMIĘ_PIERWSZE"].capitalize())
+                    imiona_zenskie.append((imie, liczba))
 
 def wczytaj_nazwiska():
     global nazwiska_meskie, nazwiska_zenskie
@@ -29,12 +31,16 @@ def wczytaj_nazwiska():
         with open("nazwiska_m.csv", encoding="utf-8") as f:
             reader = csv.DictReader(f, delimiter=',')
             for row in reader:
-                nazwiska_meskie.append(row["Nawisko"].capitalize())
+                nazwisko = row["Nawisko"].capitalize()
+                liczba = int(row["Liczba"])
+                nazwiska_meskie.append((nazwisko, liczba))
     if not nazwiska_zenskie:
         with open("nazwiska_d.csv", encoding="utf-8") as f:
             reader = csv.DictReader(f, delimiter=',')
             for row in reader:
-                nazwiska_zenskie.append(row["Nawisko"].capitalize())
+                nazwisko = row["Nawisko"].capitalize()
+                liczba = int(row["Liczba"])
+                nazwiska_zenskie.append((nazwisko, liczba))
 
 # Generowanie danych
 def generuj_plec():
@@ -43,16 +49,18 @@ def generuj_plec():
 def generuj_imie(plec):
     wczytaj_imiona()
     if plec == "M":
-        return random.choice(imiona_meskie)
+        imiona, wagi = zip(*imiona_meskie)
     else:
-        return random.choice(imiona_zenskie)
+        imiona, wagi = zip(*imiona_zenskie)
+    return random.choices(imiona, weights=wagi, k=1)[0]
 
 def generuj_nazwisko(plec):
     wczytaj_nazwiska()
     if plec == "M":
-        return random.choice(nazwiska_meskie)
+        nazwiska, wagi = zip(*nazwiska_meskie)
     else:
-        return random.choice(nazwiska_zenskie)
+        nazwiska, wagi = zip(*nazwiska_zenskie)
+    return random.choices(nazwiska, weights=wagi, k=1)[0]
 
 # Obsługa kliknięcia przycisku
 def wygeneruj():
