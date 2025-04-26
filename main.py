@@ -4,6 +4,18 @@ import json
 import tkinter as tk
 from tkinter import messagebox, ttk
 
+def generuj_telefon():
+    # TODO: tu wstaw implementację numeru telefonu
+    raise NotImplementedError("Phone number generation not implemented yet")
+
+def generuj_pesel():
+    # TODO: tu wstaw implementację PESEL
+    raise NotImplementedError("PESEL generation not implemented yet")
+
+def generuj_karta_kredytowa():
+    # TODO: tu wstaw implementację karty kredytowej
+    raise NotImplementedError("Credit card generation not implemented yet")
+
 # Bufory na dane – wczytywane tylko przy potrzebie
 imiona_meskie = []
 imiona_zenskie = []
@@ -148,9 +160,11 @@ def wygeneruj():
     wczytaj_domains()
     wczytaj_extensions()
 
-    # ustawienie i wyzerowanie paska postępu
+    # Przygotuj UI
+    generate_button.config(state=tk.DISABLED)
     pb['maximum'] = ile
     pb['value'] = 0
+    percent_label.config(text="0%")
     root.update_idletasks()
     step = max(1, min(10, ile // 100))
 
@@ -173,50 +187,78 @@ def wygeneruj():
             nazwisko = None
         if var_email.get():
             osoba["email"] = generuj_email(imie, nazwisko, plec)
+        # TODO: Usuń False po dodaniu pola
+        if False and var_telefon.get():
+            osoba["telefon"] = generuj_telefon()
+        if False and var_pesel.get():
+            osoba["pesel"] = generuj_pesel()
+        if False and var_karta.get():
+            osoba["karta_kredytowa"] = generuj_karta_kredytowa()
         osoby.append(osoba)
 
         # ograniczona aktualizacja paska postępu
         if idx % step == 0 or idx == ile - 1:
             pb['value'] = idx + 1
+            percent = int((idx + 1) / ile * 100)
+            percent_label.config(text=f"{percent}%")
             root.update_idletasks()
 
     with open("osoby.json", "w", encoding="utf-8") as f:
         json.dump(osoby, f, indent=4, ensure_ascii=False)
 
     messagebox.showinfo("Sukces", f"Wygenerowano {ile} osób i zapisano do 'osoby.json'.")
+    generate_button.config(state=tk.NORMAL)
 
 # Tworzenie GUI
 root = tk.Tk()
 root.title("Generator osób")
+root.resizable(False, False)
+style = ttk.Style()
+style.theme_use('clam')
 
-frame = tk.Frame(root, padx=20, pady=20)
-frame.pack()
+mainframe = ttk.Frame(root, padding="20 20 20 20")
+mainframe.grid(row=0, column=0, sticky=(tk.N, tk.W, tk.E, tk.S))
 
-label = tk.Label(frame, text="Ile osób wygenerować?")
-label.pack()
-entry_ile = tk.Entry(frame)
-entry_ile.pack()
+# Liczba rekordów do wygenerowania
+ttk.Label(mainframe, text="Ile osób:").grid(row=0, column=0, sticky=tk.W)
+entry_ile = ttk.Entry(mainframe, width=10)
+entry_ile.grid(row=0, column=1, sticky=(tk.W, tk.E), padx=(5, 0))
+entry_ile.insert(0, "100")
+entry_ile.focus()
 
-var_imie = tk.BooleanVar()
-var_nazwisko = tk.BooleanVar()
+# Opcje dla pól
+var_imie = tk.BooleanVar(value=True)
+var_nazwisko = tk.BooleanVar(value=True)
 var_plec = tk.BooleanVar()
 var_email = tk.BooleanVar()
+# Dodatkowe zablokowane pola
+var_telefon = tk.BooleanVar()
+var_pesel = tk.BooleanVar()
+var_karta = tk.BooleanVar()
+options_frame = ttk.LabelFrame(mainframe, text="Pola do wygenerowania", padding="10 10 10 10")
+options_frame.grid(row=1, column=0, columnspan=2, pady=10, sticky=(tk.W, tk.E))
+ttk.Checkbutton(options_frame, text="Imię", variable=var_imie).grid(row=0, column=0, sticky=tk.W, padx=5, pady=2)
+ttk.Checkbutton(options_frame, text="Nazwisko", variable=var_nazwisko).grid(row=0, column=1, sticky=tk.W, padx=5, pady=2)
+ttk.Checkbutton(options_frame, text="Płeć", variable=var_plec).grid(row=1, column=0, sticky=tk.W, padx=5, pady=2)
+ttk.Checkbutton(options_frame, text="Email", variable=var_email).grid(row=1, column=1, sticky=tk.W, padx=5, pady=2)
+# TODO: Po zaimplementowaniu pola usuń "state=tk.DISABLED"
+ttk.Checkbutton(options_frame, text="Telefon", variable=var_telefon, state=tk.DISABLED).grid(row=2, column=0, sticky=tk.W, padx=5, pady=2)
+ttk.Checkbutton(options_frame, text="PESEL", variable=var_pesel, state=tk.DISABLED).grid(row=2, column=1, sticky=tk.W, padx=5, pady=2)
+ttk.Checkbutton(options_frame, text="Karta kredytowa", variable=var_karta, state=tk.DISABLED).grid(row=3, column=0, sticky=tk.W, padx=5, pady=2)
 
-check_imie = tk.Checkbutton(frame, text="Imię", variable=var_imie)
-check_nazwisko = tk.Checkbutton(frame, text="Nazwisko", variable=var_nazwisko)
-check_plec = tk.Checkbutton(frame, text="Płeć", variable=var_plec)
-check_email = tk.Checkbutton(frame, text="Email", variable=var_email)
+# Przycisk generowania
+generate_button = ttk.Button(mainframe, text="Wygeneruj", command=wygeneruj)
+generate_button.grid(row=2, column=0, columnspan=2, pady=10)
 
-check_imie.pack(anchor='w')
-check_nazwisko.pack(anchor='w')
-check_plec.pack(anchor='w')
-check_email.pack(anchor='w')
+# Pasek postępu i etykieta procentowa
+progress_frame = ttk.Frame(mainframe)
+progress_frame.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E))
+pb = ttk.Progressbar(progress_frame, orient='horizontal', mode='determinate', length=200)
+pb.grid(row=0, column=0, sticky=(tk.W, tk.E), pady=(0,10))
+percent_label = ttk.Label(progress_frame, text="0%", width=5)
+percent_label.grid(row=0, column=1, sticky=tk.E, padx=(5,0))
 
-button = tk.Button(frame, text="Wygeneruj", command=wygeneruj)
-button.pack(pady=10)
-
-# progress bar pokazujący postęp
-pb = ttk.Progressbar(frame, orient='horizontal', length=300, mode='determinate')
-pb.pack(pady=(5, 0), fill='x')
+# Powiąż klawisz Enter z generowaniem
+root.bind('<Return>', lambda e: wygeneruj())
 
 root.mainloop()
