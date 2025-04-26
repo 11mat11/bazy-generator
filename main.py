@@ -11,10 +11,18 @@ nazwiska_meskie = []
 nazwiska_zenskie = []
 domeny = []
 rozszerzenia = []
+imiona_m_names = []
+imiona_m_weights = []
+imiona_z_names = []
+imiona_z_weights = []
+nazwiska_m_names = []
+nazwiska_m_weights = []
+nazwiska_z_names = []
+nazwiska_z_weights = []
 
 # Wczytywanie danych – tylko gdy potrzebne
 def wczytaj_imiona():
-    global imiona_meskie, imiona_zenskie
+    global imiona_meskie, imiona_zenskie, imiona_m_names, imiona_m_weights, imiona_z_names, imiona_z_weights
     if not imiona_meskie and not imiona_zenskie:
         with open("imiona.csv", encoding="utf-8") as f:
             reader = csv.DictReader(f, delimiter=',')
@@ -26,9 +34,18 @@ def wczytaj_imiona():
                     imiona_meskie.append((imie, liczba))
                 elif row["PŁEĆ"] == "KOBIETA":
                     imiona_zenskie.append((imie, liczba))
+    # wstępne obliczenie rozkładu imion
+    if imiona_meskie and not imiona_m_names:
+        names, weights = zip(*imiona_meskie)
+        imiona_m_names = list(names)
+        imiona_m_weights = list(weights)
+    if imiona_zenskie and not imiona_z_names:
+        names, weights = zip(*imiona_zenskie)
+        imiona_z_names = list(names)
+        imiona_z_weights = list(weights)
 
 def wczytaj_nazwiska():
-    global nazwiska_meskie, nazwiska_zenskie
+    global nazwiska_meskie, nazwiska_zenskie, nazwiska_m_names, nazwiska_m_weights, nazwiska_z_names, nazwiska_z_weights
     if not nazwiska_meskie:
         with open("nazwiska_m.csv", encoding="utf-8") as f:
             reader = csv.DictReader(f, delimiter=',')
@@ -43,6 +60,15 @@ def wczytaj_nazwiska():
                 nazwisko = row["Nawisko"].capitalize()
                 liczba = int(row["Liczba"])
                 nazwiska_zenskie.append((nazwisko, liczba))
+    # wstępne obliczenie rozkładu nazwisk
+    if nazwiska_meskie and not nazwiska_m_names:
+        names, weights = zip(*nazwiska_meskie)
+        nazwiska_m_names = list(names)
+        nazwiska_m_weights = list(weights)
+    if nazwiska_zenskie and not nazwiska_z_names:
+        names, weights = zip(*nazwiska_zenskie)
+        nazwiska_z_names = list(names)
+        nazwiska_z_weights = list(weights)
 
 def wczytaj_domains():
     global domeny
@@ -63,9 +89,7 @@ def wczytaj_extensions():
                     rozszerzenia.append(row[0].strip())
 
 def generuj_email(imie, nazwisko, plec):
-    wczytaj_domains()
-    wczytaj_extensions()
-    # jeśli brak imienia lub nazwiska, wygeneruj tymczasowo
+    # Jeśli brak imienia lub nazwiska, wygeneruj tymczasowo
     if not imie or not nazwisko or not plec:
         plec = generuj_plec()
     if not imie:
@@ -73,18 +97,23 @@ def generuj_email(imie, nazwisko, plec):
     if not nazwisko:
         nazwisko = generuj_nazwisko(plec)
     local = imie.lower()
+
+    # Czy wstawić kropkę między imieniem i nazwiskiem
     if random.choice([True, False]):
         local += "."
     local += nazwisko.lower()
+
+    # Jaką liczbę wstawić po nazwisku
     if random.random() < 0.7:
         scheme = random.choice([1, 2, 3])
-        if scheme == 1:
+        if scheme == 1: # Typowa liczba
             num = str(random.randint(1, 99))
-        elif scheme == 2:
+        elif scheme == 2: # Rok
             num = str(random.randint(1900, 2030))
-        else:
+        else: # Dowolna liczba
             num = str(random.randint(1, 9999))
         local += num
+
     domain = random.choice(domeny)
     ext = random.choice(rozszerzenia)
     return f"{local}@{domain}.{ext}"
@@ -94,20 +123,16 @@ def generuj_plec():
     return random.choice(["M", "K"])
 
 def generuj_imie(plec):
-    wczytaj_imiona()
     if plec == "M":
-        imiona, wagi = zip(*imiona_meskie)
+        return random.choices(imiona_m_names, weights=imiona_m_weights, k=1)[0]
     else:
-        imiona, wagi = zip(*imiona_zenskie)
-    return random.choices(imiona, weights=wagi, k=1)[0]
+        return random.choices(imiona_z_names, weights=imiona_z_weights, k=1)[0]
 
 def generuj_nazwisko(plec):
-    wczytaj_nazwiska()
     if plec == "M":
-        nazwiska, wagi = zip(*nazwiska_meskie)
+        return random.choices(nazwiska_m_names, weights=nazwiska_m_weights, k=1)[0]
     else:
-        nazwiska, wagi = zip(*nazwiska_zenskie)
-    return random.choices(nazwiska, weights=wagi, k=1)[0]
+        return random.choices(nazwiska_z_names, weights=nazwiska_z_weights, k=1)[0]
 
 # Obsługa kliknięcia przycisku
 def wygeneruj():
@@ -117,10 +142,17 @@ def wygeneruj():
         messagebox.showerror("Błąd", "Podaj poprawną liczbę osób.")
         return
 
+    # wczytaj dane tylko raz
+    wczytaj_imiona()
+    wczytaj_nazwiska()
+    wczytaj_domains()
+    wczytaj_extensions()
+
     # ustawienie i wyzerowanie paska postępu
     pb['maximum'] = ile
     pb['value'] = 0
     root.update_idletasks()
+    step = max(1, min(10, ile // 100))
 
     osoby = []
     for idx in range(ile):
@@ -143,9 +175,10 @@ def wygeneruj():
             osoba["email"] = generuj_email(imie, nazwisko, plec)
         osoby.append(osoba)
 
-        # aktualizacja paska postępu
-        pb['value'] = idx + 1
-        root.update_idletasks()
+        # ograniczona aktualizacja paska postępu
+        if idx % step == 0 or idx == ile - 1:
+            pb['value'] = idx + 1
+            root.update_idletasks()
 
     with open("osoby.json", "w", encoding="utf-8") as f:
         json.dump(osoby, f, indent=4, ensure_ascii=False)
