@@ -1,102 +1,52 @@
 [
     {
-        "plec": "M",
-        "imie": "Henryk",
-        "nazwisko": "Majewski"
+        "imie": "Alicja",
+        "nazwisko": "Przydanek",
+        "telefon": "+48 536 884 845"
     },
     {
-        "plec": "M",
-        "imie": "Kacper",
-        "nazwisko": "Przywara"
+        "imie": "Igor",
+        "nazwisko": "Modzelewski",
+        "telefon": "+48 726 403 676"
     },
     {
-        "plec": "K",
-        "imie": "Rita",
-        "nazwisko": "Szymańska"
+        "imie": "Oliwia",
+        "nazwisko": "Godziewska",
+        "telefon": "+48 661 934 348"
     },
     {
-        "plec": "M",
-        "imie": "Jan",
-        "nazwisko": "Korfel"
+        "imie": "Faustyna",
+        "nazwisko": "Rudko",
+        "telefon": "+48 513 505 970"
     },
     {
-        "plec": "M",
-        "imie": "Bruno",
-        "nazwisko": "Nowicki"
-    },
-    {
-        "plec": "M",
-        "imie": "Jan",
-        "nazwisko": "Bartnicki"
-    },
-    {
-        "plec": "K",
         "imie": "Maja",
-        "nazwisko": "Mundziel"
+        "nazwisko": "Drohovoz",
+        "telefon": "+48 889 401 328"
     },
     {
-        "plec": "K",
-        "imie": "Agata",
-        "nazwisko": "Kielińska"
+        "imie": "Mateusz",
+        "nazwisko": "Zawadzki",
+        "telefon": "+48 608 178 840"
     },
     {
-        "plec": "K",
-        "imie": "Michalina",
-        "nazwisko": "Raszczuk"
+        "imie": "Filip",
+        "nazwisko": "Zatyka",
+        "telefon": "+48 458 176 281"
     },
     {
-        "plec": "M",
-        "imie": "Ignacy",
-        "nazwisko": "Kryś"
+        "imie": "Nela",
+        "nazwisko": "Obiała",
+        "telefon": "+48 517 978 420"
     },
     {
-        "plec": "K",
-        "imie": "Antonina",
-        "nazwisko": "Kalisz"
+        "imie": "Viktoriia",
+        "nazwisko": "Dębowska",
+        "telefon": "+48 572 331 184"
     },
     {
-        "plec": "K",
-        "imie": "Hanna",
-        "nazwisko": "Ludziejewska"
-    },
-    {
-        "plec": "M",
-        "imie": "Jan",
-        "nazwisko": "Strojny"
-    },
-    {
-        "plec": "M",
-        "imie": "Stanisław",
-        "nazwisko": "Jędrzejewski"
-    },
-    {
-        "plec": "M",
-        "imie": "Szymon",
-        "nazwisko": "Kulesza"
-    },
-    {
-        "plec": "M",
-        "imie": "Kajetan",
-        "nazwisko": "Poprawski"
-    },
-    {
-        "plec": "K",
-        "imie": "Klara",
-        "nazwisko": "Kazimierczak"
-    },
-    {
-        "plec": "M",
-        "imie": "Mikołaj",
-        "nazwisko": "Pach"
-    },
-    {
-        "plec": "K",
-        "imie": "Marianna",
-        "nazwisko": "Słonina"
-    },
-    {
-        "plec": "M",
-        "imie": "Antoni",
-        "nazwisko": "Wawrzyniak"
+        "imie": "Zofia",
+        "nazwisko": "Wujka",
+        "telefon": "+48 664 889 749"
     }
 ]
