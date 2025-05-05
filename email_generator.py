@@ -4,29 +4,23 @@ from plec_generator import generuj_plec
 from imie_generator import generuj_imie
 from nazwisko_generator import generuj_nazwisko
 
-# Bufory na dane – wczytywane tylko przy potrzebie
-domeny = []
-rozszerzenia = []
+# Bufor na dane – wczytywane tylko przy potrzebie
+kombinacje = []
+weights = []  # weights for weighted random choice based on priority list
 
-def wczytaj_domains():
-    global domeny
-    if not domeny:
-        with open("domains.csv", encoding="utf-8") as f:
-            reader = csv.reader(f)
-            for row in reader:
-                if row:
-                    domeny.append(row[0].strip())
-
-def wczytaj_extensions():
-    global rozszerzenia
-    if not rozszerzenia:
-        with open("extensions.csv", encoding="utf-8") as f:
-            reader = csv.reader(f)
-            for row in reader:
-                if row:
-                    rozszerzenia.append(row[0].strip())
+# Wczytaj faktyczne kombinacje z pliku CSV
+def wczytaj_domain_extensions():
+    global kombinacje, weights
+    if not kombinacje:
+        with open("domain_extensions.csv", encoding="utf-8") as f:
+            kombinacje = [row[0].strip() for row in csv.reader(f) if row]
+        # Assign higher weight to earlier (more popular) items
+        total = len(kombinacje)
+        weights = [total - i for i in range(total)]
 
 def generuj_email(imie, nazwisko, plec):
+    # Upewnij się, że kombinacje są wczytane
+    wczytaj_domain_extensions()
     # Jeśli brak imienia lub nazwiska, wygeneruj tymczasowo
     if not imie or not nazwisko or not plec:
         plec = generuj_plec()
@@ -52,6 +46,6 @@ def generuj_email(imie, nazwisko, plec):
             num = str(random.randint(1, 9999))
         local += num
 
-    domain = random.choice(domeny)
-    ext = random.choice(rozszerzenia)
-    return f"{local}@{domain}.{ext}"
+    # Wybór domeny z wagami zgodnie z priorytetami
+    domain_extension = random.choices(kombinacje, weights=weights, k=1)[0]
+    return f"{local}@{domain_extension}"
