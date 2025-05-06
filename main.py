@@ -1,14 +1,12 @@
-import csv
-import random
 import json
 import tkinter as tk
 from tkinter import messagebox, ttk
-from pesel_generator import generate_pesel
-from imie_generator import wczytaj_imiona, generuj_imie
-from nazwisko_generator import wczytaj_nazwiska, generuj_nazwisko
-from email_generator import wczytaj_domain_extensions, generuj_email
-from plec_generator import generuj_plec
-from telefon_generator import generuj_numer_telefonu
+from Pesel.pesel_generator import generate_pesel
+from Imiona.imie_generator import wczytaj_imiona, generuj_imie
+from Nazwiska.nazwisko_generator import wczytaj_nazwiska, generuj_nazwisko
+from Email.email_generator import wczytaj_domain_extensions, generuj_email
+from Plec.plec_generator import generuj_plec
+from Telefon.telefon_generator import generuj_numer_telefonu
 
 def generuj_telefon():
     return generuj_numer_telefonu()
