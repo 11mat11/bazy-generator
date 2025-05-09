@@ -7,14 +7,13 @@ from Nazwiska.nazwisko_generator import wczytaj_nazwiska, generuj_nazwisko
 from Email.email_generator import wczytaj_domain_extensions, generuj_email
 from Plec.plec_generator import generuj_plec
 from Telefon.telefon_generator import generuj_numer_telefonu
+from Karty.karta_kredytowa_generator import wczytaj_biny, generate_card_number
 
 def generuj_telefon():
     return generuj_numer_telefonu()
 
-
 def generuj_karta_kredytowa():
-    # TODO: tu wstaw implementację karty kredytowej
-    raise NotImplementedError("Credit card generation not implemented yet")
+    return generate_card_number()
 
 def generuj_pesel(plec=None):
     return generate_pesel(gender=plec)
@@ -31,6 +30,7 @@ def wygeneruj():
     wczytaj_imiona()
     wczytaj_nazwiska()
     wczytaj_domain_extensions()
+    wczytaj_biny()
 
     # Przygotuj UI
     generate_button.config(state=tk.DISABLED)
@@ -112,10 +112,9 @@ ttk.Checkbutton(options_frame, text="Imię", variable=var_imie).grid(row=0, colu
 ttk.Checkbutton(options_frame, text="Nazwisko", variable=var_nazwisko).grid(row=0, column=1, sticky=tk.W, padx=5, pady=2)
 ttk.Checkbutton(options_frame, text="Płeć", variable=var_plec).grid(row=1, column=0, sticky=tk.W, padx=5, pady=2)
 ttk.Checkbutton(options_frame, text="Email", variable=var_email).grid(row=1, column=1, sticky=tk.W, padx=5, pady=2)
-# TODO: Po zaimplementowaniu pola usuń "state=tk.DISABLED"
 ttk.Checkbutton(options_frame, text="Telefon", variable=var_telefon).grid(row=2, column=0, sticky=tk.W, padx=5, pady=2)
 ttk.Checkbutton(options_frame, text="PESEL", variable=var_pesel).grid(row=2, column=1, sticky=tk.W, padx=5, pady=2)
-ttk.Checkbutton(options_frame, text="Karta kredytowa", variable=var_karta, state=tk.DISABLED).grid(row=3, column=0, sticky=tk.W, padx=5, pady=2)
+ttk.Checkbutton(options_frame, text="Karta kredytowa", variable=var_karta).grid(row=3, column=0, sticky=tk.W, padx=5, pady=2)
 
 # Przycisk generowania
 generate_button = ttk.Button(mainframe, text="Wygeneruj", command=wygeneruj)
