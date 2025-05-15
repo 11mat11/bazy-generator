@@ -57,7 +57,11 @@ def generuj_osobe():
             (var_adres_kod, "kod"),
         ]
         elems = [name for flag, name in options if flag.get()]
-        osoba["adres"] = generuj_adres(wybierz_elementy=elems) if elems else generuj_adres()
+        mode = var_address_mode.get()
+        if elems:
+            osoba["adres"] = generuj_adres(wybierz_elementy=elems, mode=mode)
+        else:
+            osoba["adres"] = generuj_adres(mode=mode)
     return osoba
 
 # Obsługa kliknięcia przycisku
@@ -85,6 +89,7 @@ def wygeneruj():
     osoby = []
     for idx in range(ile):
         osoba = generuj_osobe()
+        osoba['_address_mode'] = var_address_mode.get()
         osoby.append(osoba)
 
         # ograniczona aktualizacja paska postępu
@@ -154,12 +159,23 @@ ttk.Checkbutton(address_options_frame, text="Numer", variable=var_adres_numer).g
 ttk.Checkbutton(address_options_frame, text="Kod", variable=var_adres_kod).grid(row=2, column=0, sticky=tk.W, padx=5, pady=2)
 # Domyślnie schowaj te opcje
 address_options_frame.grid_remove()
+# Dodaj opcje trybu generowania adresu
+var_address_mode = tk.StringVar(value="most_real")
+address_mode_frame = ttk.LabelFrame(options_frame, text="Tryb generowania adresu", padding="10 10 10 10")
+address_mode_frame.grid(row=5, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=5)
+ttk.Radiobutton(address_mode_frame, text="Celnie", variable=var_address_mode, value="most_real").grid(row=0, column=0, sticky=tk.W, padx=5, pady=2)
+ttk.Radiobutton(address_mode_frame, text="Zbalansowanie", variable=var_address_mode, value="mixed").grid(row=0, column=1, sticky=tk.W, padx=5, pady=2)
+ttk.Radiobutton(address_mode_frame, text="Szybko", variable=var_address_mode, value="fastest").grid(row=0, column=2, sticky=tk.W, padx=5, pady=2)
+# Ukryj tryby na start
+address_mode_frame.grid_remove()
 # Odkryj opcje, gdy adres jest zaznaczony
 def _toggle_address_options(*args):
     if var_adres.get():
         address_options_frame.grid()
+        address_mode_frame.grid()
     else:
         address_options_frame.grid_remove()
+        address_mode_frame.grid_remove()
 var_adres.trace_add('write', _toggle_address_options)
 
 # Przycisk generowania

@@ -79,13 +79,19 @@ def uzupelnij_adres(adres):
 
     return adres, zrodla
 
-def generuj_adres(wybierz_elementy=None, z_f=False):
-    # Zbiór dostępnych danych
-    lat, lon = losuj_wspolrzedne()
-    adres = pobierz_adres_z_api(lat, lon)
-
-    if adres is None:
+def generuj_adres(wybierz_elementy=None, mode="most_real"):
+    # Tryb 'mixed' wybiera losowo między rzeczywistym a najszybszym (Faker)
+    if mode == "mixed":
+        mode = "most_real" if random.random() < 0.5 else "fastest"
+    # Wybór źródła danych w zależności od trybu
+    if mode == "fastest":
         adres = {}
+    else:
+        # Próba pobrania rzeczywistego adresu
+        lat, lon = losuj_wspolrzedne()
+        adres = pobierz_adres_z_api(lat, lon) or {}
+
+    # Uzupełnienie brakujących pól Fakerem
     adres, zrodla = uzupelnij_adres(adres)
 
     # Filtracja na podstawie elementów do wyboru
@@ -95,7 +101,10 @@ def generuj_adres(wybierz_elementy=None, z_f=False):
         zrodla = {key: value for key, value in zrodla.items() if key in wybierz_elementy}
 
     def oznacz(wartosc, zrodlo):
-        return f"{wartosc} (F)" if zrodlo == "F" and z_f else wartosc
+        # Oznaczenie wartości Fakerem tylko w trybie most_real
+        if zrodlo == "F" and mode == "most_real":
+            return f"{wartosc} (F)"
+        return wartosc
 
     # Przygotowanie JSON-a
     adres_json = {}
@@ -110,5 +119,5 @@ def generuj_adres(wybierz_elementy=None, z_f=False):
 # print(generuj_adres(wybierz_elementy=["ulica", "miasto","wojewodztwo","numer", "kod"]))
 
 # 3. Z opcją dodania literki (F) do danych wygenerowanych przez Faker:
-# print(generuj_adres(z_f=True))
+# print(generuj_adres(mode="most_real"))
 
