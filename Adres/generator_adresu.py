@@ -107,8 +107,8 @@ def generuj_adres(wybierz_elementy=None, z_f=False):
 
 # Przykład użycia:
 # 1. Jeśli użytkownik chce generować tylko ulice i miasto:
-print(generuj_adres(wybierz_elementy=["ulica", "miasto","wojewodztwo","numer", "kod"]))
+# print(generuj_adres(wybierz_elementy=["ulica", "miasto","wojewodztwo","numer", "kod"]))
 
 # 3. Z opcją dodania literki (F) do danych wygenerowanych przez Faker:
-print(generuj_adres(z_f=True))
+# print(generuj_adres(z_f=True))
 
