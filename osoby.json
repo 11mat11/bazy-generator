@@ -1,802 +1,182 @@
 [
     {
-        "plec": "M",
-        "imie": "Eryk",
-        "nazwisko": "Przybylski",
-        "email": "erykprzybylski1908@outlook.com",
-        "telefon": "+48 885 388 233",
-        "pesel": "66102624672"
-    },
-    {
-        "plec": "M",
-        "imie": "Maciej",
-        "nazwisko": "Szulc",
-        "email": "maciejszulc@yahoo.com",
-        "telefon": "+48 573 091 350",
-        "pesel": "31120750874"
-    },
-    {
-        "plec": "M",
-        "imie": "Mikołaj",
-        "nazwisko": "Chrobok",
-        "email": "mikołaj.chrobok1910@verizon.net",
-        "telefon": "+48 786 257 566",
-        "pesel": "09020246236"
-    },
-    {
-        "plec": "M",
-        "imie": "Nikodem",
-        "nazwisko": "Szczurek",
-        "email": "nikodem.szczurek10@aol.com",
-        "telefon": "+48 512 869 949",
-        "pesel": "93100795679"
-    },
-    {
-        "plec": "M",
-        "imie": "Jakub",
-        "nazwisko": "Kondzior",
-        "email": "jakubkondzior2016@hotmail.com",
-        "telefon": "+48 787 051 715",
-        "pesel": "68030946578"
-    },
-    {
-        "plec": "M",
-        "imie": "Dominik",
-        "nazwisko": "Gębala",
-        "email": "dominikgębala4613@outlook.com",
-        "telefon": "+48 570 726 293",
-        "pesel": "19050360570"
-    },
-    {
-        "plec": "M",
-        "imie": "Stanisław",
-        "nazwisko": "Siejka",
-        "email": "stanisławsiejka@mail.com",
-        "telefon": "+48 505 767 150",
-        "pesel": "55111982897"
-    },
-    {
-        "plec": "M",
-        "imie": "Filip",
-        "nazwisko": "Tolko",
-        "email": "filiptolko2396@outlook.com",
-        "telefon": "+48 883 874 675",
-        "pesel": "83012050175"
-    },
-    {
-        "plec": "M",
-        "imie": "Michał",
-        "nazwisko": "Marzec",
-        "email": "michał.marzec42@gmail.com",
-        "telefon": "+48 665 120 610",
-        "pesel": "83141899131"
-    },
-    {
         "plec": "K",
-        "imie": "Oliwia",
-        "nazwisko": "Toś",
-        "email": "oliwiatoś1978@hotmail.com",
-        "telefon": "+48 450 303 273",
-        "pesel": "05030852483"
-    },
-    {
-        "plec": "K",
-        "imie": "Michalina",
-        "nazwisko": "Chrząstek",
-        "email": "michalina.chrząstek1892@outlook.com",
-        "telefon": "+48 731 408 866",
-        "pesel": "50082861747"
-    },
-    {
-        "plec": "K",
-        "imie": "Nela",
-        "nazwisko": "Chwalisz",
-        "email": "nela.chwalisz96@outlook.com",
-        "telefon": "+48 537 707 830",
-        "pesel": "07052416306"
+        "imie": "Anna",
+        "nazwisko": "Słońska",
+        "email": "annasłońska2002@hotmail.com",
+        "telefon": "+48 696 972 035",
+        "pesel": "42031131245",
+        "karta_kredytowa": {
+            "numer_karty": "4127956106121",
+            "data_wazności": "03/29",
+            "cvv": "515",
+            "schemat": "VISA",
+            "bank": "BANK ZACHODNI WBK, S.A.",
+            "typ": "DEBIT"
+        },
+        "adres": "{\n    \"wojewodztwo\": \"Lubuskie\",\n    \"miasto\": \"Lubin\",\n    \"ulica\": \"Miłosza\",\n    \"numer\": \"40/12\",\n    \"kod\": \"92-576\"\n}",
+        "_address_mode": "fastest"
     },
     {
         "plec": "M",
-        "imie": "Szymon",
-        "nazwisko": "Bąk",
-        "email": "szymonbąk5536@yahoo.com",
-        "telefon": "+48 453 660 067",
-        "pesel": "62121244958"
-    },
-    {
-        "plec": "M",
-        "imie": "Ignacy",
-        "nazwisko": "Bogurski",
-        "email": "ignacybogurski@yahoo.com",
-        "telefon": "+48 508 027 852",
-        "pesel": "44111382752"
-    },
-    {
-        "plec": "M",
-        "imie": "Antoni",
-        "nazwisko": "Zieliński",
-        "email": "antoni.zieliński79@msn.com",
-        "telefon": "+48 736 024 245",
-        "pesel": "89093011913"
-    },
-    {
-        "plec": "K",
-        "imie": "Julia",
-        "nazwisko": "Bienio",
-        "email": "julia.bienio7@mail.com",
-        "telefon": "+48 665 023 863",
-        "pesel": "22120619704"
-    },
-    {
-        "plec": "M",
-        "imie": "Michał",
-        "nazwisko": "Matyniak",
-        "email": "michał.matyniak2011@gmail.com",
-        "telefon": "+48 696 080 907",
-        "pesel": "53081955570"
-    },
-    {
-        "plec": "M",
-        "imie": "Aleksander",
-        "nazwisko": "Hucz",
-        "email": "aleksanderhucz4105@hotmail.com",
-        "telefon": "+48 519 135 202",
-        "pesel": "10051430697"
-    },
-    {
-        "plec": "M",
-        "imie": "Jakub",
-        "nazwisko": "Heida",
-        "email": "jakub.heida4874@mail.ru",
-        "telefon": "+48 509 281 932",
-        "pesel": "37050254936"
-    },
-    {
-        "plec": "M",
-        "imie": "Szymon",
-        "nazwisko": "Trela",
-        "email": "szymontrela1967@outlook.com",
-        "telefon": "+48 796 292 814",
-        "pesel": "28121688453"
-    },
-    {
-        "plec": "M",
-        "imie": "Franciszek",
-        "nazwisko": "Shevchuk",
-        "email": "franciszekshevchuk1981@live.com",
-        "telefon": "+48 573 774 711",
-        "pesel": "11110282178"
-    },
-    {
-        "plec": "M",
-        "imie": "Krystian",
-        "nazwisko": "Kasprowiak",
-        "email": "krystian.kasprowiak9369@msn.com",
-        "telefon": "+48 530 701 290",
-        "pesel": "01100311753"
-    },
-    {
-        "plec": "M",
-        "imie": "Nikodem",
-        "nazwisko": "Konsek",
-        "email": "nikodem.konsek2011@yahoo.com",
-        "telefon": "+48 538 596 465",
-        "pesel": "77041397499"
-    },
-    {
-        "plec": "K",
-        "imie": "Laura",
-        "nazwisko": "Mesjasz",
-        "email": "laura.mesjasz@protonmail.com",
-        "telefon": "+48 455 685 441",
-        "pesel": "12141029387"
-    },
-    {
-        "plec": "K",
-        "imie": "Iga",
-        "nazwisko": "Zagól",
-        "email": "iga.zagól75@aol.com",
-        "telefon": "+48 457 595 302",
-        "pesel": "01081438320"
-    },
-    {
-        "plec": "M",
-        "imie": "Wojciech",
-        "nazwisko": "Mikołajów",
-        "email": "wojciech.mikołajów1920@protonmail.com",
-        "telefon": "+48 799 425 835",
-        "pesel": "03062816239"
-    },
-    {
-        "plec": "M",
-        "imie": "Stanisław",
-        "nazwisko": "Służalec",
-        "email": "stanisław.służalec8986@outlook.com",
-        "telefon": "+48 736 927 427",
-        "pesel": "05061004554"
-    },
-    {
-        "plec": "K",
-        "imie": "Antonina",
-        "nazwisko": "Szczepańska",
-        "email": "antoninaszczepańska51@hotmail.com",
-        "telefon": "+48 727 463 720",
-        "pesel": "87122745383"
-    },
-    {
-        "plec": "M",
-        "imie": "Nikodem",
-        "nazwisko": "Moskal",
-        "email": "nikodem.moskal9@outlook.com",
-        "telefon": "+48 538 277 338",
-        "pesel": "25101110210"
-    },
-    {
-        "plec": "K",
-        "imie": "Pola",
-        "nazwisko": "Krochmal",
-        "email": "pola.krochmal2017@mail.ru",
-        "telefon": "+48 600 654 570",
-        "pesel": "79040203809"
-    },
-    {
-        "plec": "K",
-        "imie": "Eva",
-        "nazwisko": "Borek",
-        "email": "evaborek@verizon.net",
-        "telefon": "+48 691 942 103",
-        "pesel": "26122888681"
-    },
-    {
-        "plec": "K",
-        "imie": "Laura",
-        "nazwisko": "Krupko",
-        "email": "laurakrupko@mail.com",
-        "telefon": "+48 578 665 489",
-        "pesel": "59052094286"
-    },
-    {
-        "plec": "M",
-        "imie": "Franciszek",
-        "nazwisko": "Cirut",
-        "email": "franciszek.cirut2972@yahoo.com",
-        "telefon": "+48 530 693 835",
-        "pesel": "04042897512"
-    },
-    {
-        "plec": "K",
-        "imie": "Maja",
-        "nazwisko": "Leśniak",
-        "email": "maja.leśniak@hotmail.com",
-        "telefon": "+48 886 003 275",
-        "pesel": "31112335582"
-    },
-    {
-        "plec": "K",
-        "imie": "Liliana",
-        "nazwisko": "Rogowska",
-        "email": "liliana.rogowska@hotmail.com",
-        "telefon": "+48 509 917 576",
-        "pesel": "66081021345"
-    },
-    {
-        "plec": "K",
-        "imie": "Izabela",
-        "nazwisko": "Płazak",
-        "email": "izabela.płazak@gmail.com",
-        "telefon": "+48 661 358 720",
-        "pesel": "47090449881"
-    },
-    {
-        "plec": "M",
-        "imie": "Szymon",
-        "nazwisko": "Szlaur",
-        "email": "szymon.szlaur@gmail.com",
-        "telefon": "+48 789 078 006",
-        "pesel": "75040497134"
-    },
-    {
-        "plec": "M",
-        "imie": "Antoni",
-        "nazwisko": "Olejnik",
-        "email": "antoniolejnik2003@hotmail.com",
-        "telefon": "+48 500 218 621",
-        "pesel": "50081813035"
-    },
-    {
-        "plec": "M",
-        "imie": "Milan",
-        "nazwisko": "Wekwert",
-        "email": "milanwekwert430@yahoo.com",
-        "telefon": "+48 669 805 058",
-        "pesel": "19141907152"
-    },
-    {
-        "plec": "M",
-        "imie": "Franciszek",
-        "nazwisko": "Cywiński",
-        "email": "franciszekcywiński@outlook.com",
-        "telefon": "+48 535 260 661",
-        "pesel": "81061363419"
-    },
-    {
-        "plec": "M",
-        "imie": "Natan",
-        "nazwisko": "Grajner",
-        "email": "natangrajner@outlook.com",
-        "telefon": "+48 450 823 891",
-        "pesel": "11030668472"
+        "imie": "Hubert",
+        "nazwisko": "Stępień",
+        "email": "hubert.stępień52@protonmail.com",
+        "telefon": "+48 608 878 067",
+        "pesel": "85111052991",
+        "karta_kredytowa": {
+            "numer_karty": "4478390909194",
+            "data_wazności": "08/29",
+            "cvv": "753",
+            "schemat": "VISA",
+            "bank": "BANK POLSKA KASA OPIEKI S.A. (BANK PEKAO SA)",
+            "typ": "DEBIT"
+        },
+        "adres": "{\n    \"wojewodztwo\": \"Dolnośląskie\",\n    \"miasto\": \"Chorzów\",\n    \"ulica\": \"Ciasna\",\n    \"numer\": \"00\",\n    \"kod\": \"74-832\"\n}",
+        "_address_mode": "fastest"
     },
     {
         "plec": "K",
         "imie": "Klara",
-        "nazwisko": "Naskręska",
-        "email": "klara.naskręska94@aol.com",
-        "telefon": "+48 732 868 289",
-        "pesel": "01011714102"
-    },
-    {
-        "plec": "K",
-        "imie": "Cecylia",
-        "nazwisko": "Ptasińska",
-        "email": "cecylia.ptasińska1976@live.com",
-        "telefon": "+48 601 323 046",
-        "pesel": "95071848640"
-    },
-    {
-        "plec": "K",
-        "imie": "Lilianna",
-        "nazwisko": "Kutsolapska",
-        "email": "liliannakutsolapska1136@hushmail.com",
-        "telefon": "+48 457 229 574",
-        "pesel": "94112029020"
-    },
-    {
-        "plec": "K",
-        "imie": "Jaśmina",
-        "nazwisko": "Migas",
-        "email": "jaśminamigas@yahoo.com",
-        "telefon": "+48 784 694 232",
-        "pesel": "79111682809"
-    },
-    {
-        "plec": "K",
-        "imie": "Amelia",
-        "nazwisko": "Orlyk",
-        "email": "ameliaorlyk2016@fastmail.com",
-        "telefon": "+48 796 335 861",
-        "pesel": "22122441181"
-    },
-    {
-        "plec": "K",
-        "imie": "Angelina",
-        "nazwisko": "Klasa",
-        "email": "angelina.klasa58@outlook.com",
-        "telefon": "+48 537 074 464",
-        "pesel": "67092712288"
-    },
-    {
-        "plec": "M",
-        "imie": "Tymon",
-        "nazwisko": "Wawrzyńczyk",
-        "email": "tymonwawrzyńczyk@verizon.net",
-        "telefon": "+48 603 168 485",
-        "pesel": "93051325619"
-    },
-    {
-        "plec": "K",
-        "imie": "Kaja",
-        "nazwisko": "Leśniewska",
-        "email": "kajaleśniewska1988@mail.ru",
-        "telefon": "+48 784 405 109",
-        "pesel": "75033158824"
-    },
-    {
-        "plec": "K",
-        "imie": "Helena",
-        "nazwisko": "Stahmer",
-        "email": "helenastahmer1944@outlook.com",
-        "telefon": "+48 692 664 898",
-        "pesel": "89012729565"
-    },
-    {
-        "plec": "M",
-        "imie": "Jakub",
-        "nazwisko": "Kolanek",
-        "email": "jakubkolanek2445@mail.com",
-        "telefon": "+48 535 374 291",
-        "pesel": "06122768314"
-    },
-    {
-        "plec": "M",
-        "imie": "Nikodem",
-        "nazwisko": "Kurp",
-        "email": "nikodemkurp2022@yahoo.com",
-        "telefon": "+48 787 970 980",
-        "pesel": "97041709858"
-    },
-    {
-        "plec": "K",
-        "imie": "Iga",
-        "nazwisko": "Krawczyk",
-        "email": "iga.krawczyk56@hotmail.com",
-        "telefon": "+48 601 353 183",
-        "pesel": "87080778526"
-    },
-    {
-        "plec": "M",
-        "imie": "Stanisław",
-        "nazwisko": "Weber",
-        "email": "stanisławweber5@mail.ru",
-        "telefon": "+48 515 149 796",
-        "pesel": "59072581935"
-    },
-    {
-        "plec": "K",
-        "imie": "Liwia",
-        "nazwisko": "Woitke",
-        "email": "liwia.woitke1991@aol.com",
-        "telefon": "+48 517 932 127",
-        "pesel": "40101820925"
-    },
-    {
-        "plec": "K",
-        "imie": "Oliwia",
-        "nazwisko": "Zych",
-        "email": "oliwiazych9237@outlook.com",
-        "telefon": "+48 459 345 903",
-        "pesel": "48032167487"
-    },
-    {
-        "plec": "M",
-        "imie": "Antoni",
-        "nazwisko": "Kaim",
-        "email": "antoni.kaim2023@mail.com",
-        "telefon": "+48 793 112 234",
-        "pesel": "22031476450"
-    },
-    {
-        "plec": "K",
-        "imie": "Kornelia",
-        "nazwisko": "Szczurzewska",
-        "email": "kornelia.szczurzewska1937@aol.com",
-        "telefon": "+48 514 599 495",
-        "pesel": "84090882025"
-    },
-    {
-        "plec": "M",
-        "imie": "Jakub",
-        "nazwisko": "Skrzypiński",
-        "email": "jakub.skrzypiński3974@yahoo.com",
-        "telefon": "+48 571 702 335",
-        "pesel": "03142754233"
-    },
-    {
-        "plec": "M",
-        "imie": "Nikodem",
-        "nazwisko": "Calik",
-        "email": "nikodemcalik1947@yahoo.com",
-        "telefon": "+48 456 978 614",
-        "pesel": "33110689076"
-    },
-    {
-        "plec": "K",
-        "imie": "Michalina",
-        "nazwisko": "Mastaj",
-        "email": "michalina.mastaj7244@yahoo.com",
-        "telefon": "+48 790 061 444",
-        "pesel": "49032562524"
-    },
-    {
-        "plec": "M",
-        "imie": "Marcel",
-        "nazwisko": "Kondracki",
-        "email": "marcelkondracki49@mail.ru",
-        "telefon": "+48 518 208 743",
-        "pesel": "58111735397"
-    },
-    {
-        "plec": "M",
-        "imie": "Maksym",
-        "nazwisko": "Wójtowicz",
-        "email": "maksym.wójtowicz1900@mail.ru",
-        "telefon": "+48 698 042 341",
-        "pesel": "30071431018"
-    },
-    {
-        "plec": "M",
-        "imie": "Michał",
-        "nazwisko": "Wojciechowski",
-        "email": "michałwojciechowski1999@protonmail.com",
-        "telefon": "+48 531 380 734",
-        "pesel": "84082712116"
-    },
-    {
-        "plec": "M",
-        "imie": "Wojciech",
-        "nazwisko": "Karaczun",
-        "email": "wojciechkaraczun1987@msn.com",
-        "telefon": "+48 456 134 014",
-        "pesel": "41050787510"
-    },
-    {
-        "plec": "K",
-        "imie": "Liliana",
-        "nazwisko": "Cieniuch",
-        "email": "lilianacieniuch54@verizon.net",
-        "telefon": "+48 725 218 824",
-        "pesel": "49070133500"
-    },
-    {
-        "plec": "K",
-        "imie": "Lilianna",
-        "nazwisko": "Twardosz",
-        "email": "liliannatwardosz3@hotmail.com",
-        "telefon": "+48 888 337 166",
-        "pesel": "00092370924"
-    },
-    {
-        "plec": "M",
-        "imie": "Szymon",
-        "nazwisko": "Zdunek",
-        "email": "szymon.zdunek1943@mail.com",
-        "telefon": "+48 668 292 550",
-        "pesel": "31042094793"
-    },
-    {
-        "plec": "K",
-        "imie": "Marcelina",
-        "nazwisko": "Dolata",
-        "email": "marcelina.dolata53@protonmail.com",
-        "telefon": "+48 516 272 503",
-        "pesel": "53041816240"
-    },
-    {
-        "plec": "K",
-        "imie": "Melania",
-        "nazwisko": "Wronecka",
-        "email": "melaniawronecka5877@hushmail.com",
-        "telefon": "+48 796 276 210",
-        "pesel": "97050642063"
-    },
-    {
-        "plec": "M",
-        "imie": "Leon",
-        "nazwisko": "Ożga",
-        "email": "leon.ożga700@live.com",
-        "telefon": "+48 731 863 255",
-        "pesel": "27122927631"
-    },
-    {
-        "plec": "M",
-        "imie": "Wojciech",
-        "nazwisko": "Godzich",
-        "email": "wojciechgodzich@gmail.com",
-        "telefon": "+48 666 190 629",
-        "pesel": "33070786134"
-    },
-    {
-        "plec": "K",
-        "imie": "Oliwia",
-        "nazwisko": "Rybacka",
-        "email": "oliwia.rybacka3378@hotmail.com",
-        "telefon": "+48 730 784 908",
-        "pesel": "80100568723"
-    },
-    {
-        "plec": "M",
-        "imie": "Leon",
-        "nazwisko": "Krotowski",
-        "email": "leonkrotowski2022@outlook.com",
-        "telefon": "+48 734 871 858",
-        "pesel": "00111334670"
-    },
-    {
-        "plec": "K",
-        "imie": "Antonina",
-        "nazwisko": "Dusik",
-        "email": "antoninadusik@gmail.com",
-        "telefon": "+48 730 062 966",
-        "pesel": "82090170621"
-    },
-    {
-        "plec": "K",
-        "imie": "Laura",
-        "nazwisko": "Szymków",
-        "email": "lauraszymków1948@hotmail.com",
-        "telefon": "+48 882 618 727",
-        "pesel": "40100538469"
-    },
-    {
-        "plec": "K",
-        "imie": "Maja",
-        "nazwisko": "Mizera",
-        "email": "majamizera65@aol.com",
-        "telefon": "+48 511 586 556",
-        "pesel": "62110277523"
-    },
-    {
-        "plec": "K",
-        "imie": "Pola",
-        "nazwisko": "Lebedieva",
-        "email": "pola.lebedieva@protonmail.com",
-        "telefon": "+48 881 570 557",
-        "pesel": "04110190624"
-    },
-    {
-        "plec": "K",
-        "imie": "Maria",
-        "nazwisko": "Dominiak",
-        "email": "mariadominiak@aol.com",
-        "telefon": "+48 608 164 873",
-        "pesel": "56080477520"
-    },
-    {
-        "plec": "M",
-        "imie": "Nikodem",
-        "nazwisko": "Pawlik",
-        "email": "nikodempawlik@msn.com",
-        "telefon": "+48 738 383 484",
-        "pesel": "38102779355"
-    },
-    {
-        "plec": "M",
-        "imie": "Ignacy",
-        "nazwisko": "Nowak",
-        "email": "ignacynowak@protonmail.com",
-        "telefon": "+48 669 235 647",
-        "pesel": "29040898730"
-    },
-    {
-        "plec": "M",
-        "imie": "Aleksander",
-        "nazwisko": "Rzepka",
-        "email": "aleksander.rzepka23@mail.com",
-        "telefon": "+48 501 577 981",
-        "pesel": "67110405918"
-    },
-    {
-        "plec": "K",
-        "imie": "Hanna",
-        "nazwisko": "Staniszewska",
-        "email": "hannastaniszewska39@msn.com",
-        "telefon": "+48 603 339 985",
-        "pesel": "48112776406"
-    },
-    {
-        "plec": "K",
-        "imie": "Maja",
-        "nazwisko": "Kubiak",
-        "email": "maja.kubiak1994@gmail.com",
-        "telefon": "+48 663 383 212",
-        "pesel": "94091532102"
-    },
-    {
-        "plec": "K",
-        "imie": "Antonina",
-        "nazwisko": "Lorenc",
-        "email": "antoninalorenc1950@verizon.net",
-        "telefon": "+48 889 175 094",
-        "pesel": "18061173667"
-    },
-    {
-        "plec": "K",
-        "imie": "Aurelia",
-        "nazwisko": "Furga",
-        "email": "aurelia.furga@yahoo.com",
-        "telefon": "+48 792 897 377",
-        "pesel": "34040101922"
-    },
-    {
-        "plec": "M",
-        "imie": "Wiktor",
-        "nazwisko": "Ryguła",
-        "email": "wiktorryguła@hotmail.com",
-        "telefon": "+48 697 835 051",
-        "pesel": "93010690156"
-    },
-    {
-        "plec": "M",
-        "imie": "Mark",
-        "nazwisko": "Orłowski",
-        "email": "markorłowski@mail.ru",
-        "telefon": "+48 576 400 692",
-        "pesel": "31041080155"
-    },
-    {
-        "plec": "K",
-        "imie": "Julia",
-        "nazwisko": "Karcz",
-        "email": "juliakarcz1907@aol.com",
-        "telefon": "+48 782 862 060",
-        "pesel": "63052589341"
-    },
-    {
-        "plec": "K",
-        "imie": "Laura",
-        "nazwisko": "Suma",
-        "email": "laura.suma1982@gmail.com",
-        "telefon": "+48 458 810 852",
-        "pesel": "72072918525"
-    },
-    {
-        "plec": "M",
-        "imie": "Nikodem",
-        "nazwisko": "Bartoszek",
-        "email": "nikodem.bartoszek@mail.ru",
-        "telefon": "+48 500 960 378",
-        "pesel": "95020873954"
-    },
-    {
-        "plec": "K",
-        "imie": "Maja",
-        "nazwisko": "Suwaj",
-        "email": "maja.suwaj1776@protonmail.com",
-        "telefon": "+48 739 313 125",
-        "pesel": "91111212604"
-    },
-    {
-        "plec": "M",
-        "imie": "Nikodem",
-        "nazwisko": "Szabłowski",
-        "email": "nikodemszabłowski@gmail.com",
-        "telefon": "+48 603 254 927",
-        "pesel": "76100586478"
-    },
-    {
-        "plec": "K",
-        "imie": "Rozalia",
-        "nazwisko": "Ziegler",
-        "email": "rozalia.ziegler@live.com",
-        "telefon": "+48 783 554 187",
-        "pesel": "73090275621"
-    },
-    {
-        "plec": "K",
-        "imie": "Agata",
-        "nazwisko": "Kalinowska",
-        "email": "agata.kalinowska3163@yahoo.com",
-        "telefon": "+48 601 967 362",
-        "pesel": "84030247242"
-    },
-    {
-        "plec": "K",
-        "imie": "Anastazja",
-        "nazwisko": "Michór",
-        "email": "anastazjamichór1915@protonmail.com",
-        "telefon": "+48 573 789 005",
-        "pesel": "70062820023"
-    },
-    {
-        "plec": "M",
-        "imie": "Natan",
-        "nazwisko": "Wiatr",
-        "email": "natan.wiatr12@yahoo.com",
-        "telefon": "+48 660 435 120",
-        "pesel": "93081296891"
+        "nazwisko": "Czarnecka",
+        "email": "klara.czarnecka9432@hotmail.com",
+        "telefon": "+48 735 480 228",
+        "pesel": "92120994264",
+        "karta_kredytowa": {
+            "numer_karty": "5575475663580387",
+            "data_wazności": "09/26",
+            "cvv": "631",
+            "schemat": "MASTERCARD",
+            "bank": "ALIOR BANK SPOLKA AKCYJNA",
+            "typ": "DEBIT"
+        },
+        "adres": "{\n    \"wojewodztwo\": \"Podlaskie\",\n    \"miasto\": \"Zamość\",\n    \"ulica\": \"Żabia\",\n    \"numer\": \"17\",\n    \"kod\": \"96-281\"\n}",
+        "_address_mode": "fastest"
     },
     {
         "plec": "K",
         "imie": "Emilia",
-        "nazwisko": "Zaporozhchenko",
-        "email": "emiliazaporozhchenko@mail.ru",
-        "telefon": "+48 695 490 011",
-        "pesel": "82072515400"
+        "nazwisko": "Szpernalowska",
+        "email": "emilia.szpernalowska1905@aol.com",
+        "telefon": "+48 452 354 092",
+        "pesel": "80061450185",
+        "karta_kredytowa": {
+            "numer_karty": "5359429394475351",
+            "data_wazności": "10/27",
+            "cvv": "413",
+            "schemat": "MASTERCARD",
+            "bank": "BNP PARIBAS BANK POLSKA, S.A.",
+            "typ": "CREDIT"
+        },
+        "adres": "{\n    \"wojewodztwo\": \"Podlaskie\",\n    \"miasto\": \"Elbląg\",\n    \"ulica\": \"Leszczynowa\",\n    \"numer\": \"65/14\",\n    \"kod\": \"23-141\"\n}",
+        "_address_mode": "fastest"
     },
     {
         "plec": "M",
-        "imie": "Antoni",
-        "nazwisko": "Maćkowiak",
-        "email": "antonimaćkowiak78@protonmail.com",
-        "telefon": "+48 885 646 389",
-        "pesel": "50040892332"
+        "imie": "Wojciech",
+        "nazwisko": "Kidawski",
+        "email": "wojciechkidawski8084@hotmail.com",
+        "telefon": "+48 738 291 161",
+        "pesel": "99142315831",
+        "karta_kredytowa": {
+            "numer_karty": "4107870686655",
+            "data_wazności": "08/27",
+            "cvv": "141",
+            "schemat": "VISA",
+            "bank": "BNP PARIBAS BANK POLSKA, S.A.",
+            "typ": "DEBIT"
+        },
+        "adres": "{\n    \"wojewodztwo\": \"Podlaskie\",\n    \"miasto\": \"Biała Podlaska\",\n    \"ulica\": \"Północna\",\n    \"numer\": \"55/84\",\n    \"kod\": \"83-596\"\n}",
+        "_address_mode": "fastest"
     },
     {
         "plec": "K",
-        "imie": "Sabina",
-        "nazwisko": "Szyszka",
-        "email": "sabina.szyszka1851@aol.com",
-        "telefon": "+48 722 017 091",
-        "pesel": "12081124120"
+        "imie": "Antonina",
+        "nazwisko": "Derlikiewicz",
+        "email": "antonina.derlikiewicz@verizon.net",
+        "telefon": "+48 691 611 804",
+        "pesel": "23132397602",
+        "karta_kredytowa": {
+            "numer_karty": "4466549783772028",
+            "data_wazności": "04/28",
+            "cvv": "848",
+            "schemat": "VISA",
+            "bank": "BANK ZACHODNI WBK, S.A.",
+            "typ": "DEBIT"
+        },
+        "adres": "{\n    \"wojewodztwo\": \"Świętokrzyskie\",\n    \"miasto\": \"Chorzów\",\n    \"ulica\": \"Gałczynskiego\",\n    \"numer\": \"670\",\n    \"kod\": \"19-795\"\n}",
+        "_address_mode": "fastest"
+    },
+    {
+        "plec": "K",
+        "imie": "Oliwia",
+        "nazwisko": "Walkusz",
+        "email": "oliwiawalkusz@gmail.com",
+        "telefon": "+48 726 894 747",
+        "pesel": "54062281082",
+        "karta_kredytowa": {
+            "numer_karty": "4277569155637780",
+            "data_wazności": "12/28",
+            "cvv": "250",
+            "schemat": "VISA",
+            "bank": "ING BANK SLASKI, S.A.",
+            "typ": "DEBIT"
+        },
+        "adres": "{\n    \"wojewodztwo\": \"Wielkopolskie\",\n    \"miasto\": \"Ostrów Wielkopolski\",\n    \"ulica\": \"Swierkowa\",\n    \"numer\": \"12/38\",\n    \"kod\": \"42-443\"\n}",
+        "_address_mode": "fastest"
+    },
+    {
+        "plec": "M",
+        "imie": "Jan",
+        "nazwisko": "Strzelczak",
+        "email": "jan.strzelczak78@verizon.net",
+        "telefon": "+48 458 852 122",
+        "pesel": "19013019958",
+        "karta_kredytowa": {
+            "numer_karty": "5478926065339861",
+            "data_wazności": "02/30",
+            "cvv": "720",
+            "schemat": "MASTERCARD",
+            "bank": "MBANK S.A.",
+            "typ": "CREDIT"
+        },
+        "adres": "{\n    \"wojewodztwo\": \"Lubelskie\",\n    \"miasto\": \"Zduńska Wola\",\n    \"ulica\": \"Podleśna\",\n    \"numer\": \"56/87\",\n    \"kod\": \"93-014\"\n}",
+        "_address_mode": "fastest"
+    },
+    {
+        "plec": "M",
+        "imie": "Julian",
+        "nazwisko": "Białek",
+        "email": "julianbiałek4554@gmail.com",
+        "telefon": "+48 881 150 200",
+        "pesel": "06052471456",
+        "karta_kredytowa": {
+            "numer_karty": "4277027069772",
+            "data_wazności": "01/29",
+            "cvv": "412",
+            "schemat": "VISA",
+            "bank": "BANK MILLENNIUM SPOLKA AKCYJNA",
+            "typ": "DEBIT"
+        },
+        "adres": "{\n    \"wojewodztwo\": \"Mazowieckie\",\n    \"miasto\": \"Koszalin\",\n    \"ulica\": \"Nowa\",\n    \"numer\": \"53/28\",\n    \"kod\": \"14-184\"\n}",
+        "_address_mode": "fastest"
+    },
+    {
+        "plec": "M",
+        "imie": "Leon",
+        "nazwisko": "Mes",
+        "email": "leon.mes@hotmail.com",
+        "telefon": "+48 456 356 156",
+        "pesel": "69052176974",
+        "karta_kredytowa": {
+            "numer_karty": "4063270568158863327",
+            "data_wazności": "02/30",
+            "cvv": "967",
+            "schemat": "VISA",
+            "bank": "BANK POLSKA KASA OPIEKI S.A. (BANK PEKAO SA)",
+            "typ": "DEBIT"
+        },
+        "adres": "{\n    \"wojewodztwo\": \"Łódzkie\",\n    \"miasto\": \"Toruń\",\n    \"ulica\": \"Sienkiewicza\",\n    \"numer\": \"42/34\",\n    \"kod\": \"39-584\"\n}",
+        "_address_mode": "fastest"
     }
 ]
