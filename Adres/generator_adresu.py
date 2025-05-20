@@ -1,4 +1,3 @@
-import json
 from faker import Faker
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderUnavailable, GeocoderTimedOut
@@ -112,7 +111,7 @@ def generuj_adres(wybierz_elementy=None, mode="most_real"):
         if value:
             adres_json[key] = oznacz(value, zrodla.get(key, ""))
 
-    return json.dumps(adres_json, ensure_ascii=False, indent=4)
+    return adres_json
 
 # Przykład użycia:
 # 1. Jeśli użytkownik chce generować tylko ulice i miasto:

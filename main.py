@@ -9,6 +9,10 @@ from Plec.plec_generator import generuj_plec
 from Telefon.telefon_generator import generuj_numer_telefonu
 from Karty.karta_kredytowa_generator import wczytaj_biny, generate_card_number
 from Adres.generator_adresu import generuj_adres
+from Z_format.convert_to_csv import write_to_csv
+from Z_format.convert_to_json import write_to_json
+from Z_format.convert_to_sql import write_to_sql
+
 
 def generuj_telefon():
     return generuj_numer_telefonu()
@@ -99,8 +103,12 @@ def wygeneruj():
             percent_label.config(text=f"{percent}%")
             root.update_idletasks()
 
-    with open("osoby.json", "w", encoding="utf-8") as f:
-        json.dump(osoby, f, indent=4, ensure_ascii=False)
+    if var_csv.get():
+        write_to_csv(osoby)
+    if var_sql.get():
+        write_to_sql(osoby)
+    if var_json.get():
+        write_to_json(osoby)
 
     messagebox.showinfo("Sukces", f"Wygenerowano {ile} osób i zapisano do 'osoby.json'.")
     generate_button.config(state=tk.NORMAL)
@@ -178,13 +186,33 @@ def _toggle_address_options(*args):
         address_mode_frame.grid_remove()
 var_adres.trace_add('write', _toggle_address_options)
 
+#Wybór formatu
+var_json = tk.BooleanVar(value=True)
+var_csv = tk.BooleanVar(value=False)
+var_sql = tk.BooleanVar(value=False)
+
+format_frame = ttk.LabelFrame(mainframe, text="Format", padding="10 10 10 10")
+format_frame.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=5)
+ttk.Checkbutton(format_frame, text="JSON", variable=var_json).grid(row=0, column=0, sticky=tk.W, padx=5, pady=2)
+ttk.Checkbutton(format_frame, text="CSV", variable=var_csv).grid(row=0, column=1, sticky=tk.W, padx=5, pady=2)
+ttk.Checkbutton(format_frame, text="SQL", variable=var_sql).grid(row=0, column=2, sticky=tk.W, padx=5, pady=2)
+def update_button_state(*args):
+    if var_json.get() or var_csv.get() or var_sql.get():
+        generate_button.config(state=tk.NORMAL)
+    else:
+        generate_button.config(state=tk.DISABLED)
+var_json.trace_add('write', update_button_state)
+var_csv.trace_add('write', update_button_state)
+var_sql.trace_add('write', update_button_state)
+
+
 # Przycisk generowania
 generate_button = ttk.Button(mainframe, text="Wygeneruj", command=wygeneruj)
-generate_button.grid(row=2, column=0, columnspan=2, pady=10)
+generate_button.grid(row=4, column=0, columnspan=2, pady=10)
 
 # Pasek postępu i etykieta procentowa
 progress_frame = ttk.Frame(mainframe)
-progress_frame.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E))
+progress_frame.grid(row=5, column=0, columnspan=2, sticky=(tk.W, tk.E))
 pb = ttk.Progressbar(progress_frame, orient='horizontal', mode='determinate', length=200)
 pb.grid(row=0, column=0, sticky=(tk.W, tk.E), pady=(0,10))
 percent_label = ttk.Label(progress_frame, text="0%", width=5)
