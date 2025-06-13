@@ -26,12 +26,7 @@ def generate_pesel(birth_date=None, gender=None):
         century_marker = 0
     elif 2000 <= year <= 2099:
         century_marker = 2
-    elif 2100 <= year <= 2199:
-        century_marker = 4
-    elif 2200 <= year <= 2299:
-        century_marker = 6
-    elif 1800 <= year <= 1899:
-        century_marker = 8
+   
     else:
         raise ValueError("Year must be between 1800 and 2299")
     

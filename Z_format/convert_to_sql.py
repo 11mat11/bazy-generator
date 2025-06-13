@@ -29,6 +29,9 @@ def write_to_sql(data):
                         nested_fields['adres'].add(nk)
                 except Exception:
                     root_fields.add(key)
+            elif key in ['telefon', 'email', 'karta_kredytowa']:
+                # Skip these fields from root as they'll have their own tables
+                continue
             else:
                 root_fields.add(key)
 
@@ -42,7 +45,29 @@ def write_to_sql(data):
         cols.append(f + ' TEXT')
     sql_statements.append(f"CREATE TABLE {main_table} (\n    " + ",\n    ".join(cols) + "\n);")
 
-    # Nested tables
+    # Contact information table
+    sql_statements.append("""
+CREATE TABLE contact_info (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER REFERENCES person(id),
+    type TEXT NOT NULL,
+    value TEXT NOT NULL
+);""")
+
+    # Credit cards table
+    sql_statements.append("""
+CREATE TABLE credit_cards (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER REFERENCES person(id),
+    card_number TEXT NOT NULL,
+    expiry_date TEXT NOT NULL,
+    cvv TEXT NOT NULL,
+    scheme TEXT NOT NULL,
+    bank TEXT NOT NULL,
+    card_type TEXT NOT NULL
+);""")
+
+    # Nested tables (for address)
     for table, fields in nested_fields.items():
         tbl_name = table
         cols = ['id INTEGER PRIMARY KEY AUTOINCREMENT', f"person_id INTEGER REFERENCES {main_table}(id)"]
@@ -65,7 +90,35 @@ def write_to_sql(data):
         sql_statements.append(
             f"INSERT INTO {main_table} (" + ", ".join(sorted(root_fields)) + ") VALUES (" + ", ".join(values) + ");"
         )
-        # get last inserted id via placeholder
+
+        # Insert contact information
+        if 'telefon' in record and record['telefon']:
+            for phone in record['telefon']:
+                sql_statements.append(
+                    f"INSERT INTO contact_info (person_id, type, value) VALUES (LAST_INSERT_ROWID(), 'phone', {escape_sql(phone)});"
+                )
+        
+        if 'email' in record and record['email']:
+            for email in record['email']:
+                sql_statements.append(
+                    f"INSERT INTO contact_info (person_id, type, value) VALUES (LAST_INSERT_ROWID(), 'email', {escape_sql(email)});"
+                )
+
+        # Insert credit cards
+        if 'karta_kredytowa' in record and record['karta_kredytowa']:
+            for card in record['karta_kredytowa']:
+                sql_statements.append(
+                    f"INSERT INTO credit_cards (person_id, card_number, expiry_date, cvv, scheme, bank, card_type) VALUES ("
+                    f"LAST_INSERT_ROWID(), "
+                    f"{escape_sql(card['numer_karty'])}, "
+                    f"{escape_sql(card['data_wazności'])}, "
+                    f"{escape_sql(card['cvv'])}, "
+                    f"{escape_sql(card['schemat'])}, "
+                    f"{escape_sql(card['bank'])}, "
+                    f"{escape_sql(card['typ'])});"
+                )
+
+        # Insert address
         for key in nested_fields.keys():
             tbl_name = key
             nested = record.get(key)
@@ -80,5 +133,6 @@ def write_to_sql(data):
                 sql_statements.append(
                     f"INSERT INTO {tbl_name} (person_id, " + ", ".join(cols) + ") VALUES (LAST_INSERT_ROWID(), " + ", ".join(vals) + ");"
                 )
+
     with open('output.sql', 'w', encoding='utf-8') as f:
         f.write("\n\n".join(sql_statements))

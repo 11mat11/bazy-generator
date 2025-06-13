@@ -12,6 +12,7 @@ from Adres.generator_adresu import generuj_adres
 from Z_format.convert_to_csv import write_to_csv
 from Z_format.convert_to_json import write_to_json
 from Z_format.convert_to_sql import write_to_sql
+import random
 
 
 def generuj_telefon():
@@ -40,16 +41,27 @@ def generuj_osobe():
     if nazwisko is not None:
         osoba["nazwisko"] = nazwisko
 
-    # Pozostałe pola
-    field_map = [
-        (var_email, "email", lambda: generuj_email(imie, nazwisko, plec)),
-        (var_telefon, "telefon", generuj_telefon),
-        (var_pesel, "pesel", lambda: generuj_pesel(plec)),
-        (var_karta, "karta_kredytowa", generuj_karta_kredytowa),
-    ]
-    for flag, key, fn in field_map:
-        if flag.get():
-            osoba[key] = fn()
+    # Generowanie wielu numerów telefonów
+    if var_telefon.get():
+        max_telefonow = int(entry_max_telefonow.get())
+        liczba_telefonow = random.randint(1, max_telefonow)
+        osoba["telefon"] = [generuj_telefon() for _ in range(liczba_telefonow)]
+
+    # Generowanie wielu kart kredytowych
+    if var_karta.get():
+        max_kart = int(entry_max_kart.get())
+        liczba_kart = random.randint(1, max_kart)
+        osoba["karta_kredytowa"] = [generuj_karta_kredytowa() for _ in range(liczba_kart)]
+
+    # Generowanie wielu adresów email
+    if var_email.get():
+        max_emaili = int(entry_max_emaili.get())
+        liczba_emaili = random.randint(1, max_emaili)
+        osoba["email"] = [generuj_email(imie, nazwisko, plec) for _ in range(liczba_emaili)]
+
+    # PESEL (pozostaje pojedynczy)
+    if var_pesel.get():
+        osoba["pesel"] = generuj_pesel(plec)
 
     # Adres składający się z opcjonalnych części
     if var_adres.get():
@@ -205,6 +217,41 @@ var_json.trace_add('write', update_button_state)
 var_csv.trace_add('write', update_button_state)
 var_sql.trace_add('write', update_button_state)
 
+# Dodajemy nowe pola dla maksymalnej liczby elementów
+max_counts_frame = ttk.LabelFrame(mainframe, text="Maksymalna liczba elementów", padding="10 10 10 10")
+max_counts_frame.grid(row=2, column=0, columnspan=2, pady=10, sticky=(tk.W, tk.E))
+
+# Telefony
+ttk.Label(max_counts_frame, text="Maks. liczba telefonów:").grid(row=0, column=0, sticky=tk.W, padx=5, pady=2)
+entry_max_telefonow = ttk.Entry(max_counts_frame, width=10)
+entry_max_telefonow.grid(row=0, column=1, sticky=tk.W, padx=5, pady=2)
+entry_max_telefonow.insert(0, "1")
+
+# Karty kredytowe
+ttk.Label(max_counts_frame, text="Maks. liczba kart:").grid(row=1, column=0, sticky=tk.W, padx=5, pady=2)
+entry_max_kart = ttk.Entry(max_counts_frame, width=10)
+entry_max_kart.grid(row=1, column=1, sticky=tk.W, padx=5, pady=2)
+entry_max_kart.insert(0, "1")
+
+# Emails
+ttk.Label(max_counts_frame, text="Maks. liczba emaili:").grid(row=2, column=0, sticky=tk.W, padx=5, pady=2)
+entry_max_emaili = ttk.Entry(max_counts_frame, width=10)
+entry_max_emaili.grid(row=2, column=1, sticky=tk.W, padx=5, pady=2)
+entry_max_emaili.insert(0, "1")
+
+# Ukryj ramkę z maksymalnymi liczbami na start
+max_counts_frame.grid_remove()
+
+# Funkcja do pokazywania/ukrywania ramki z maksymalnymi liczbami
+def toggle_max_counts(*args):
+    if var_telefon.get() or var_karta.get() or var_email.get():
+        max_counts_frame.grid()
+    else:
+        max_counts_frame.grid_remove()
+
+var_telefon.trace_add('write', toggle_max_counts)
+var_karta.trace_add('write', toggle_max_counts)
+var_email.trace_add('write', toggle_max_counts)
 
 # Przycisk generowania
 generate_button = ttk.Button(mainframe, text="Wygeneruj", command=wygeneruj)
