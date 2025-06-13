@@ -1,0 +1,406 @@
+[
+    {
+        "plec": "M",
+        "imie": "Antoni",
+        "nazwisko": "Kastelik",
+        "telefon": [
+            "+48 576 455 812",
+            "+48 729 402 614",
+            "+48 453 433 045"
+        ],
+        "karta_kredytowa": [
+            {
+                "numer_karty": "5467199003897829",
+                "data_wazności": "11/27",
+                "cvv": "186",
+                "schemat": "MASTERCARD",
+                "bank": "BANK PRZEMYSLOWO-HANDLOWY PKB, S.A.",
+                "typ": "CREDIT"
+            }
+        ],
+        "email": [
+            "antoni.kastelik1926@hotmail.com",
+            "antonikastelik1900@verizon.net"
+        ],
+        "pesel": "80122316913",
+        "adres": {
+            "wojewodztwo": "Zachodniopomorskie",
+            "miasto": "Zaleszczyce",
+            "ulica": "Wilcza (F)",
+            "numer": "6b",
+            "kod": "72-300"
+        },
+        "_address_mode": "mixed"
+    },
+    {
+        "plec": "K",
+        "imie": "Lidia",
+        "nazwisko": "Staszkiewicz",
+        "telefon": [
+            "+48 504 042 484"
+        ],
+        "karta_kredytowa": [
+            {
+                "numer_karty": "5583417621910801",
+                "data_wazności": "01/29",
+                "cvv": "123",
+                "schemat": "MASTERCARD",
+                "bank": "HYPO BANK POLSKA, S.A.",
+                "typ": "CREDIT"
+            },
+            {
+                "numer_karty": "5476953169661513",
+                "data_wazności": "10/26",
+                "cvv": "764",
+                "schemat": "MASTERCARD",
+                "bank": "ALIOR BANK SPOLKA AKCYJNA",
+                "typ": "CREDIT"
+            }
+        ],
+        "email": [
+            "lidia.staszkiewicz@protonmail.com",
+            "lidia.staszkiewicz4505@msn.com",
+            "lidiastaszkiewicz26@yahoo.com"
+        ],
+        "pesel": "25071535626",
+        "adres": {
+            "wojewodztwo": "Podlaskie",
+            "miasto": "Puławy",
+            "ulica": "Rumiankowa",
+            "numer": "62/91",
+            "kod": "28-797"
+        },
+        "_address_mode": "mixed"
+    },
+    {
+        "plec": "K",
+        "imie": "Klara",
+        "nazwisko": "Salwa",
+        "telefon": [
+            "+48 889 585 140"
+        ],
+        "karta_kredytowa": [
+            {
+                "numer_karty": "4216538684810986273",
+                "data_wazności": "06/28",
+                "cvv": "800",
+                "schemat": "VISA",
+                "bank": "CREDIT AGRICOLE BANK POLSKA, S.A.",
+                "typ": "CREDIT"
+            },
+            {
+                "numer_karty": "4063253295073783916",
+                "data_wazności": "06/27",
+                "cvv": "895",
+                "schemat": "VISA",
+                "bank": "BANK POLSKA KASA OPIEKI S.A. (BANK PEKAO SA)",
+                "typ": "DEBIT"
+            }
+        ],
+        "email": [
+            "klarasalwa49@hotmail.com"
+        ],
+        "pesel": "19071142009",
+        "adres": {
+            "wojewodztwo": "Świętokrzyskie",
+            "miasto": "Jawor",
+            "ulica": "Mostowa",
+            "numer": "34",
+            "kod": "32-550"
+        },
+        "_address_mode": "mixed"
+    },
+    {
+        "plec": "K",
+        "imie": "Alicja",
+        "nazwisko": "Polakowska",
+        "telefon": [
+            "+48 665 674 334"
+        ],
+        "karta_kredytowa": [
+            {
+                "numer_karty": "5528169951749063",
+                "data_wazności": "11/28",
+                "cvv": "880",
+                "schemat": "MASTERCARD",
+                "bank": "MBANK S.A.",
+                "typ": "CREDIT"
+            },
+            {
+                "numer_karty": "5585281946138631",
+                "data_wazności": "02/30",
+                "cvv": "676",
+                "schemat": "MASTERCARD",
+                "bank": "NORDEA BANK POLSKA, S.A.",
+                "typ": "CREDIT"
+            }
+        ],
+        "email": [
+            "alicjapolakowska3924@mail.ru",
+            "alicja.polakowska@msn.com"
+        ],
+        "pesel": "18082387164",
+        "adres": {
+            "wojewodztwo": "Pomorskie",
+            "miasto": "Lubliniec",
+            "ulica": "Miła",
+            "numer": "64/82",
+            "kod": "24-064"
+        },
+        "_address_mode": "mixed"
+    },
+    {
+        "plec": "K",
+        "imie": "Zofia",
+        "nazwisko": "Habirek",
+        "telefon": [
+            "+48 453 430 646"
+        ],
+        "karta_kredytowa": [
+            {
+                "numer_karty": "4215503245451428",
+                "data_wazności": "08/28",
+                "cvv": "546",
+                "schemat": "VISA",
+                "bank": "CREDIT AGRICOLE BANK POLSKA, S.A.",
+                "typ": "CREDIT"
+            }
+        ],
+        "email": [
+            "zofia.habirek@gmail.com"
+        ],
+        "pesel": "85082698581",
+        "adres": {
+            "wojewodztwo": "Kujawsko-Pomorskie",
+            "miasto": "Wołomin",
+            "ulica": "Łączna",
+            "numer": "41",
+            "kod": "51-461"
+        },
+        "_address_mode": "mixed"
+    },
+    {
+        "plec": "M",
+        "imie": "Wojciech",
+        "nazwisko": "Lesiuk",
+        "telefon": [
+            "+48 505 312 082"
+        ],
+        "karta_kredytowa": [
+            {
+                "numer_karty": "337912002535847",
+                "data_wazności": "06/26",
+                "cvv": "8862",
+                "schemat": "AMERICAN EXPRESS",
+                "bank": "BANK MILLENNIUM SPOLKA AKCYJNA",
+                "typ": "CREDIT"
+            }
+        ],
+        "email": [
+            "wojciechlesiuk1967@mail.com"
+        ],
+        "pesel": "96020490192",
+        "adres": {
+            "wojewodztwo": "Łódzkie",
+            "miasto": "Bobrowiec",
+            "ulica": "Rolna (F)",
+            "numer": "51",
+            "kod": "97-220"
+        },
+        "_address_mode": "mixed"
+    },
+    {
+        "plec": "M",
+        "imie": "Alan",
+        "nazwisko": "Kawałko",
+        "telefon": [
+            "+48 736 655 076",
+            "+48 575 715 631"
+        ],
+        "karta_kredytowa": [
+            {
+                "numer_karty": "4697658979447",
+                "data_wazności": "11/28",
+                "cvv": "496",
+                "schemat": "VISA",
+                "bank": "BANK ZACHODNI WBK, S.A.",
+                "typ": "DEBIT"
+            },
+            {
+                "numer_karty": "5476890157854025",
+                "data_wazności": "12/26",
+                "cvv": "468",
+                "schemat": "MASTERCARD",
+                "bank": "ALIOR BANK SPOLKA AKCYJNA",
+                "typ": "CREDIT"
+            },
+            {
+                "numer_karty": "4160402545741924",
+                "data_wazności": "01/27",
+                "cvv": "861",
+                "schemat": "VISA",
+                "bank": "ING BANK SLASKI, S.A.",
+                "typ": "CREDIT"
+            }
+        ],
+        "email": [
+            "alan.kawałko@aol.com",
+            "alankawałko54@outlook.com"
+        ],
+        "pesel": "43041372479",
+        "adres": {
+            "wojewodztwo": "Zachodniopomorskie",
+            "miasto": "Kuropatniki",
+            "ulica": "Ludowa (F)",
+            "numer": "74 (F)",
+            "kod": "74-506"
+        },
+        "_address_mode": "mixed"
+    },
+    {
+        "plec": "M",
+        "imie": "Wiktor",
+        "nazwisko": "Mikołajczyk",
+        "telefon": [
+            "+48 784 309 868",
+            "+48 607 139 004"
+        ],
+        "karta_kredytowa": [
+            {
+                "numer_karty": "4319110164300910",
+                "data_wazności": "01/30",
+                "cvv": "871",
+                "schemat": "VISA",
+                "bank": "CREDIT AGRICOLE BANK POLSKA, S.A.",
+                "typ": "CREDIT"
+            },
+            {
+                "numer_karty": "4627286369356",
+                "data_wazności": "07/26",
+                "cvv": "392",
+                "schemat": "VISA",
+                "bank": "BANK POLSKA KASA OPIEKI S.A. (BANK PEKAO SA)",
+                "typ": "CREDIT"
+            },
+            {
+                "numer_karty": "4063329475879",
+                "data_wazności": "10/28",
+                "cvv": "756",
+                "schemat": "VISA",
+                "bank": "BANK POLSKA KASA OPIEKI S.A. (BANK PEKAO SA)",
+                "typ": "DEBIT"
+            }
+        ],
+        "email": [
+            "wiktor.mikołajczyk@yahoo.com",
+            "wiktormikołajczyk@gmail.com"
+        ],
+        "pesel": "91051430436",
+        "adres": {
+            "wojewodztwo": "Śląskie",
+            "miasto": "Legionowo",
+            "ulica": "Mieszka I",
+            "numer": "28/78",
+            "kod": "85-309"
+        },
+        "_address_mode": "mixed"
+    },
+    {
+        "plec": "M",
+        "imie": "Damian",
+        "nazwisko": "Kipka",
+        "telefon": [
+            "+48 517 013 270",
+            "+48 667 442 765",
+            "+48 507 998 682"
+        ],
+        "karta_kredytowa": [
+            {
+                "numer_karty": "4067931010701",
+                "data_wazności": "12/29",
+                "cvv": "269",
+                "schemat": "VISA",
+                "bank": "RAIFFEISEN BANK POLSKA, S.A.",
+                "typ": "CREDIT"
+            },
+            {
+                "numer_karty": "337941042913979",
+                "data_wazności": "10/27",
+                "cvv": "6339",
+                "schemat": "AMERICAN EXPRESS",
+                "bank": "BANK MILLENNIUM SPOLKA AKCYJNA",
+                "typ": "DEBIT"
+            },
+            {
+                "numer_karty": "5535918192865950",
+                "data_wazności": "12/26",
+                "cvv": "297",
+                "schemat": "MASTERCARD",
+                "bank": "BANK BPH SPOLKA AKCYJNA",
+                "typ": "CREDIT"
+            }
+        ],
+        "email": [
+            "damian.kipka2017@gmail.com",
+            "damian.kipka89@gmail.com"
+        ],
+        "pesel": "35141206817",
+        "adres": {
+            "wojewodztwo": "Świętokrzyskie",
+            "miasto": "Myszków",
+            "ulica": "Moniuszki",
+            "numer": "88/37",
+            "kod": "58-184"
+        },
+        "_address_mode": "mixed"
+    },
+    {
+        "plec": "K",
+        "imie": "Liliana",
+        "nazwisko": "Klepuszewska",
+        "telefon": [
+            "+48 889 031 986",
+            "+48 724 171 805",
+            "+48 506 940 085"
+        ],
+        "karta_kredytowa": [
+            {
+                "numer_karty": "5489673565474452",
+                "data_wazności": "05/30",
+                "cvv": "727",
+                "schemat": "MASTERCARD",
+                "bank": "KREDYT BANK PBI, S.A.",
+                "typ": "CREDIT"
+            },
+            {
+                "numer_karty": "4294650869790",
+                "data_wazności": "08/26",
+                "cvv": "993",
+                "schemat": "VISA",
+                "bank": "BNP PARIBAS BANK POLSKA, S.A.",
+                "typ": "CREDIT"
+            },
+            {
+                "numer_karty": "4047809513879",
+                "data_wazności": "10/28",
+                "cvv": "916",
+                "schemat": "VISA",
+                "bank": "BANK POLSKA KASA OPIEKI S.A. (BANK PEKAO SA)",
+                "typ": "CREDIT"
+            }
+        ],
+        "email": [
+            "lilianaklepuszewska1922@hotmail.com",
+            "liliana.klepuszewska1929@yahoo.com"
+        ],
+        "pesel": "97040636926",
+        "adres": {
+            "wojewodztwo": "Podlaskie",
+            "miasto": "Kościerzyna",
+            "ulica": "Chabrowa",
+            "numer": "63",
+            "kod": "95-882"
+        },
+        "_address_mode": "mixed"
+    }
+]
