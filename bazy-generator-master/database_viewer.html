@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baza Danych Osobowych</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .controls {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+        }
+
+        .filter-select {
+            padding: 12px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-size: 16px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 2px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .person-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .person-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .person-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .person-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f8f9fa;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-right: 15px;
+        }
+
+        .person-name {
+            flex: 1;
+        }
+
+        .person-name h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .person-details {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .info-section {
+            margin-bottom: 20px;
+        }
+
+        .info-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+        }
+
+        .card-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-number {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .card-details {
+            display: flex;
+            justify-content: space-between;
+            opacity: 0.9;
+            font-size: 0.8rem;
+        }
+
+        .address-item {
+            background: #e8f5e8;
+            border-left: 4px solid #28a745;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .person-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-box {
+                min-width: auto;
+            }
+            
+            .stats {
+                margin-left: 0;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗄️ Baza Danych Osobowych</h1>
+            <p>System zarządzania danymi osobowymi i kontaktowymi</p>
+        </div>
+
+        <div class="controls">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Wyszukaj po imieniu, nazwisku, telefonie lub emailu...">
+            </div>
+            
+            <select class="filter-select" id="genderFilter">
+                <option value="">Wszystkie płcie</option>
+                <option value="M">Mężczyźni</option>
+                <option value="K">Kobiety</option>
+            </select>
+            
+            <select class="filter-select" id="provinceFilter">
+                <option value="">Wszystkie województwa</option>
+            </select>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalPeople">0</div>
+                    <div class="stat-label">Osób</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="totalCards">0</div>
+                    <div class="stat-label">Kart</div>
+                </div>
+            </div>
+
+            <div class="file-input-container">
+                <input type="file" id="sqlFileInput" accept=".sql" style="display: none;">
+                <button class="filter-select" onclick="document.getElementById('sqlFileInput').click()">
+                    📂 Wybierz plik SQL
+                </button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="person-grid" id="personGrid">
+                <!-- Persons will be dynamically inserted here -->
+            </div>
+            
+            <div class="no-results" id="noResults" style="display: none;">
+                <h3>Brak wyników</h3>
+                <p>Nie znaleziono osób spełniających kryteria wyszukiwania.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Database data - will be loaded from file
+        let people = [];
+        let filteredPeople = [];
+
+        // Parse SQL INSERT statements
+        function parseSQLData(sqlContent) {
+            const people = [];
+            const lines = sqlContent.split('\n');
+            
+            let currentPersonId = 0;
+            let personData = {};
+            let contactInfo = [];
+            let creditCards = [];
+            let address = null;
+
+            for (const line of lines) {
+                const trimmedLine = line.trim();
+                
+                if (trimmedLine.startsWith('INSERT INTO person')) {
+                    // Save previous person if exists
+                    if (currentPersonId > 0) {
+                        people.push({
+                            id: currentPersonId,
+                            ...personData,
+                            contact: [...contactInfo],
+                            cards: [...creditCards],
+                            address: address
+                        });
+                    }
+                    
+                    // Reset for new person
+                    currentPersonId++;
+                    contactInfo = [];
+                    creditCards = [];
+                    address = null;
+                    
+                    // Parse person data
+                    const match = trimmedLine.match(/VALUES \('([^']*)', '([^']*)', '([^']*)', '([^']*)'\)/);
+                    if (match) {
+                        personData = {
+                            imie: match[1],
+                            nazwisko: match[2],
+                            pesel: match[3],
+                            plec: match[4]
+                        };
+                    }
+                } else if (trimmedLine.startsWith('INSERT INTO contact_info')) {
+                    const match = trimmedLine.match(/VALUES \(LAST_INSERT_ROWID\(\), '([^']+)', '([^']+)'\)/);
+                    if (match) {
+                        contactInfo.push({
+                            type: match[1],
+                            value: match[2]
+                        });
+                    }
+                } else if (trimmedLine.startsWith('INSERT INTO credit_cards')) {
+                    const match = trimmedLine.match(/VALUES \(LAST_INSERT_ROWID\(\), '([^']+)', '([^']+)', '([^']+)', '([^']+)', '([^']+)', '([^']+)'\)/);
+                    if (match) {
+                        creditCards.push({
+                            numer_karty: match[1].replace(/''/g, "'"),
+                            data_wazności: match[2],
+                            cvv: match[3],
+                            schemat: match[4],
+                            bank: match[5],
+                            typ: match[6]
+                        });
+                    }
+                } else if (trimmedLine.startsWith('INSERT INTO adres')) {
+                    const match = trimmedLine.match(/VALUES \(LAST_INSERT_ROWID\(\), '([^']*)', '([^']*)', '([^']*)', '([^']*)', '([^']*)'\)/);
+                    if (match) {
+                        address = {
+                            wojewodztwo: match[1],
+                            miasto: match[2],
+                            ulica: match[3],
+                            numer: match[4],
+                            kod: match[5]
+                        };
+                    }
+                }
+            }
+            
+            // Don't forget the last person
+            if (currentPersonId > 0) {
+                people.push({
+                    id: currentPersonId,
+                    ...personData,
+                    contact: [...contactInfo],
+                    cards: [...creditCards],
+                    address: address
+                });
+            }
+            
+            return people;
+        }
+
+        // Load data from file
+        function loadData() {
+            const fileInput = document.getElementById('sqlFileInput');
+            fileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        try {
+                            const sqlContent = e.target.result;
+                            people = parseSQLData(sqlContent);
+                            filteredPeople = [...people];
+                            console.log('Loaded people:', people);
+                            populateProvinceFilter();
+                            renderPeople();
+                        } catch (error) {
+                            console.error('Error parsing data:', error);
+                            showError('Błąd parsowania danych: ' + error.message);
+                        }
+                    };
+                    reader.onerror = function() {
+                        showError('Błąd odczytu pliku');
+                    };
+                    reader.readAsText(file);
+                }
+            });
+        }
+
+        // Show error message
+        function showError(message) {
+            const grid = document.getElementById('personGrid');
+            grid.innerHTML = `
+                <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #dc3545;">
+                    <h3>⚠️ Błąd</h3>
+                    <p>${message}</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #6c757d;">
+                        Wybierz plik SQL zawierający dane.
+                    </p>
+                </div>
+            `;
+        }
+
+        function getInitials(imie, nazwisko) {
+            return (imie.charAt(0) + nazwisko.charAt(0)).toUpperCase();
+        }
+
+        function formatCardNumber(number) {
+            return number.replace(/(.{4})/g, '$1 ').trim();
+        }
+
+        function renderPerson(person) {
+            const phones = person.contact.filter(c => c.type === 'phone');
+            const emails = person.contact.filter(c => c.type === 'email');
+
+            return `
+                <div class="person-card">
+                    <div class="person-header">
+                        <div class="avatar">${getInitials(person.imie, person.nazwisko)}</div>
+                        <div class="person-name">
+                            <h3>${person.imie} ${person.nazwisko}</h3>
+                            <div class="person-details">
+                                PESEL: ${person.pesel} • ${person.plec === 'M' ? 'Mężczyzna' : 'Kobieta'}
+                            </div>
+                        </div>
+                    </div>
+
+                    ${phones.length > 0 ? `
+                        <div class="info-section">
+                            <div class="info-title">📞 Telefony</div>
+                            ${phones.map(phone => `
+                                <div class="info-item">${phone.value}</div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+
+                    ${emails.length > 0 ? `
+                        <div class="info-section">
+                            <div class="info-title">📧 Email</div>
+                            ${emails.map(email => `
+                                <div class="info-item">${email.value}</div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+
+                    ${person.address ? `
+                        <div class="info-section">
+                            <div class="info-title">🏠 Adres</div>
+                            <div class="info-item address-item">
+                                ${person.address.ulica} ${person.address.numer}<br>
+                                ${person.address.kod} ${person.address.miasto}<br>
+                                woj. ${person.address.wojewodztwo}
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    ${person.cards.length > 0 ? `
+                        <div class="info-section">
+                            <div class="info-title">💳 Karty płatnicze</div>
+                            ${person.cards.map(card => `
+                                <div class="card-item">
+                                    <div class="card-number">${formatCardNumber(card.numer_karty)}</div>
+                                    <div class="card-details">
+                                        <span>${card.schemat} ${card.typ}</span>
+                                        <span>${card.data_wazności}</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; margin-top: 4px; opacity: 0.8;">
+                                        ${card.bank}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function renderPeople() {
+            const grid = document.getElementById('personGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (filteredPeople.length === 0) {
+                grid.innerHTML = '';
+                noResults.style.display = 'block';
+            } else {
+                grid.innerHTML = filteredPeople.map(renderPerson).join('');
+                noResults.style.display = 'none';
+            }
+
+            updateStats();
+        }
+
+        function updateStats() {
+            const totalCards = filteredPeople.reduce((sum, person) => sum + person.cards.length, 0);
+            document.getElementById('totalPeople').textContent = filteredPeople.length;
+            document.getElementById('totalCards').textContent = totalCards;
+        }
+
+        function filterPeople() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const genderFilter = document.getElementById('genderFilter').value;
+            const provinceFilter = document.getElementById('provinceFilter').value;
+
+            filteredPeople = people.filter(person => {
+                const matchesSearch = !searchTerm || 
+                    person.imie.toLowerCase().includes(searchTerm) ||
+                    person.nazwisko.toLowerCase().includes(searchTerm) ||
+                    person.contact.some(c => c.value.toLowerCase().includes(searchTerm));
+
+                const matchesGender = !genderFilter || person.plec === genderFilter;
+                const matchesProvince = !provinceFilter || person.address?.wojewodztwo === provinceFilter;
+
+                return matchesSearch && matchesGender && matchesProvince;
+            });
+
+            renderPeople();
+        }
+
+        function populateProvinceFilter() {
+            const provinces = [...new Set(people.map(p => p.address?.wojewodztwo).filter(Boolean))].sort();
+            const select = document.getElementById('provinceFilter');
+            
+            // Clear existing options except the first one
+            while (select.children.length > 1) {
+                select.removeChild(select.lastChild);
+            }
+            
+            provinces.forEach(province => {
+                const option = document.createElement('option');
+                option.value = province;
+                option.textContent = province;
+                select.appendChild(option);
+            });
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterPeople);
+        document.getElementById('genderFilter').addEventListener('change', filterPeople);
+        document.getElementById('provinceFilter').addEventListener('change', filterPeople);
+
+        // Initialize
+        loadData();
+    </script>
+</body>
+</html>
