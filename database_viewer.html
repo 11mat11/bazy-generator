@@ -409,11 +409,11 @@
                     const match = trimmedLine.match(/VALUES \(LAST_INSERT_ROWID\(\), '([^']*)', '([^']*)', '([^']*)', '([^']*)', '([^']*)'\)/);
                     if (match) {
                         address = {
-                            wojewodztwo: match[1],
+                            wojewodztwo: match[5],
                             miasto: match[2],
                             ulica: match[3],
                             numer: match[4],
-                            kod: match[5]
+                            kod: match[1]
                         };
                     }
                 }
